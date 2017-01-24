@@ -1,50 +1,63 @@
 var usersController = function() {
 
-  function login(context){
-      
-  };
-    
-    function register(context){
+  function authentication(context){
         templates.get('register')
         .then(function(template){
             context.$element().html(template());
-            //attach events
-            $('#btn-register').on('click', function(){
-                var user = {
-                    username: $('#tb-username').val(),
-                    password: $('#tb-password').val()
-                };
-                data.users.register(user)
-                .then(function(){
-                    toastr.success('You are registered')
-                    context.redirect('#/');
-                })
-            });
             
-            $('#btn-login').on('click', function(){
-                var user = {
-                    username: $('#tb-username').val(),
-                    password: $('#tb-password').val()
-                };
-                data.users.login(user)
-                .then(function(){
-                    toastr.success('You Are Loged In')
-                    context.redirect('#/');    
-                })
+            //Get Elements
+            const emailField = document.getElementById('tb-email');
+            const passField = document.getElementById('tb-password');
+            const btnRegister = document.getElementById('btn-register');
+            const btnLogin = document.getElementById('btn-login');
+            const btnLogout = document.getElementById('btn-logout');
+
+            //Add Login event
+            btnLogin.addEventListener('click', e => {
+                //Get Email & Pass
+                const email = emailField.value;
+                const pass = passField.value;
+                const auth = firebase.auth();
+                //Sign In
+                const promise = auth.signInWithEmailAndPassword(email, pass);
+                promise.catch(e => toastr.error(e.message));
             })
-            
-            $('#btn-logout').on('click', function() {
-                data.users.logout()
-                  .then(function() {
-                    location = '#/';
-                    document.location.reload(true);
-          });
-      });
+
+            //Add Signup event
+            btnRegister.addEventListener('click', e => {
+                //Get Email & Pass
+                const email = emailField.value;
+                const pass = passField.value;
+                const auth = firebase.auth();
+                //Register
+                const promise = auth.createUserWithEmailAndPassword(email, pass);
+                promise.catch(e => toastr.error(e.message));
+            })
+
+            //SignOut
+            btnLogout.addEventListener('click', e => {
+                firebase.auth().signOut();
+                toastr.warning('You are loged out')
+            })
+
+            //Add realtime listener
+            firebase.auth().onAuthStateChanged(firebaseUser => {
+                if (firebaseUser){
+                    //console.log(firebaseUser);
+                    toastr.success('You Are Loged In');
+                    btnLogout.classList.remove('hidden');
+                    btnRegister.classList.add('hidden');
+                    btnLogin.classList.add('hidden');
+                } else{
+                    btnLogout.classList.add('hidden');
+                    btnRegister.classList.remove('hidden');
+                    btnLogin.classList.remove('hidden');
+                }
+            })
         });
     };
 
   return {
-    register: register,
-    login: login
+    register: authentication
   };
 }();

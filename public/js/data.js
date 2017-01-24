@@ -18,6 +18,7 @@ var data = function(){
         //           resolve(res);
         //       }
         //   });
+        
         });
         return promise;
     }  
