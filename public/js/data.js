@@ -53,25 +53,16 @@ var data = function(){
    }
     
     /*Materials*/
-    function materialsGet(){
-        var promise = new Promise(function(resolve, reject){
-            // var url = 'api/materials';
-            // $.ajax(url, {
-            //     method: 'GET',
-            //     contentType: 'application/json',
-            //     headers: {
-            //       'x-auth-key': localStorage.getItem(STORAGE_AUTH_KEY)  
-            //     },
-            //     success: function(res){
-            //         resolve(res);
-            //     },
-            //     error: function(err){
-            //         reject(err);
-            //     }
-            // });
-        });
-        return promise
-    }
+    // function materialsGet(){
+    //     // var promise = new Promise(function(resolve, reject){
+    //     //     const dbRef = firebase.database().ref();
+    //     //     dbRef.on('value', function(snap) {
+    //     //     console.log(snap.val());
+    //     //   })
+    //     // });
+    //     // return promise
+        
+    // }
     
     function materialAdd(todo){
         var promise = new Promise(function(resolve, reject){
@@ -113,7 +104,7 @@ var data = function(){
             logout: userLogout
         },
         todos:{
-            get: materialsGet,
+            // get: materialsGet,
             add: materialAdd,
             getById: threadById
         }
