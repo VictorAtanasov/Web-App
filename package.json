@@ -7,7 +7,7 @@
     "start": "node app.js",
     "debug": "nodemon app.js"
   },
-  "author": "Doncho Minkov (donchominkov@gmail.com)",
+  "author": "Victor Atanasov (victor_atanasovv@yahoo.com)",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.15.2",
@@ -17,6 +17,7 @@
     "express-list-routes": "^0.1.4",
     "lodash": "^4.16.2",
     "lowdb": "^0.13.1",
+    "node-sass": "^4.3.0",
     "underscore-db": "^0.11.0"
   },
   "devDependencies": {

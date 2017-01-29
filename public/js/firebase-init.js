@@ -10,6 +10,6 @@
         firebase.initializeApp(config);
 
     //test firebase
-    const dbRefObject = firebase.database().ref().child('obj');
-    dbRefObject.on('value', snap => console.log(snap.val()));
+    // const dbRefObject = firebase.database().ref().child('obj');
+    // dbRefObject.on('value', snap => console.log(snap.val()));
 }())
