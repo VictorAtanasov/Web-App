@@ -15,8 +15,10 @@ var materialsController = function () {
     templates.get('material-add')
       .then(function (template) {
         context.$element().html(template());
-
+       
         const materialsRef = firebase.database().ref().child('added');
+        var user = firebase.auth().currentUser;
+        var userName = user.displayName;
 
         //Fields Selection
         const titleField = document.getElementById('tb-material-title');
@@ -32,7 +34,8 @@ var materialsController = function () {
           materialsRef.push({
             title: titleValue,
             text: textValue,
-            imgUrl: linkValue
+            imgUrl: linkValue,
+            author: userName
           })
           toastr.success('Added!');
           context.redirect('#/materials');

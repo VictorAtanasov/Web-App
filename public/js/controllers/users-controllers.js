@@ -8,6 +8,7 @@ var usersController = function () {
                 //Get Elements
                 const emailField = document.getElementById('tb-email');
                 const passField = document.getElementById('tb-password');
+                const userNameField = document.getElementById('tb-userName');
                 const btnRegister = document.getElementById('btn-register');
                 const btnLogin = document.getElementById('btn-login');
                 const btnLogout = document.getElementById('btn-logout');
@@ -20,7 +21,9 @@ var usersController = function () {
                     const auth = firebase.auth();
                     //Sign In
                     const promise = auth.signInWithEmailAndPassword(email, pass);
-                    promise.catch(e => toastr.error(e.message));
+                    promise
+                        .then(user => toastr.success('You Are Loged In'))
+                        .catch(e => toastr.error(e.message));
                 })
 
                 //Add Signup event
@@ -28,12 +31,23 @@ var usersController = function () {
                     //Get Email & Pass
                     const email = emailField.value;
                     const pass = passField.value;
+                    const userName = userNameField.value; 
                     const auth = firebase.auth();
                     //Register
                     const promise = auth.createUserWithEmailAndPassword(email, pass);
-                    promise.catch(e => toastr.error(e.message));
+                    promise
+                        .then(user => toastr.success('You Are Registered'))
+                        .catch(e => toastr.error(e.message));
+                    firebase.auth().onAuthStateChanged(firebaseUser => {
+                        if (firebaseUser) {
+                            var user = firebase.auth().currentUser;
+                            user.updateProfile({
+                            displayName: userName
+                            })
+                        }
+                    })
                 })
-
+                
                 //SignOut
                 btnLogout.addEventListener('click', e => {
                     firebase.auth().signOut();
@@ -43,8 +57,8 @@ var usersController = function () {
                 //Add realtime listener
                 firebase.auth().onAuthStateChanged(firebaseUser => {
                     if (firebaseUser) {
-                        //console.log(firebaseUser);
-                        toastr.success('You Are Loged In');
+                        //console.log(firebaseUser.displayName);
+                        //toastr.success('You Are Loged In');
                         btnLogout.classList.remove('hidden');
                         btnRegister.classList.add('hidden');
                         btnLogin.classList.add('hidden');
