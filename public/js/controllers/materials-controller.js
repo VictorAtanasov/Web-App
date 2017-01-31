@@ -2,7 +2,9 @@ var materialsController = function () {
 
   function all(context) {
     const dbRef = firebase.database().ref();
+    
     dbRef.on('value', function (snap) {
+      console.log(snap.val());
       templates.get('materials')
         .then(function (template) {
           context.$element().html(template(snap.val()));
@@ -15,7 +17,7 @@ var materialsController = function () {
     templates.get('material-add')
       .then(function (template) {
         context.$element().html(template());
-       
+
         const materialsRef = firebase.database().ref().child('added');
         var user = firebase.auth().currentUser;
         var userName = user.displayName;
@@ -43,8 +45,23 @@ var materialsController = function () {
       });
   }
 
+  function one(context) {
+    var detailId = context.params.id;
+    const dbRef = firebase.database().ref();
+    
+    dbRef.on('value', function (snap) {
+      var detail = snap.val().added[detailId];
+      
+      templates.get('material-details')
+        .then(function (template) {
+          context.$element().html(template(detail));
+        });
+    })
+  }
+
   return {
     all: all,
-    add: add
+    add: add,
+    one: one
   };
 }();

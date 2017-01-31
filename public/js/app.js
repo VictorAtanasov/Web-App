@@ -11,8 +11,8 @@
         this.get('#/materials', materialsController.all);
         this.get('#/materials/add', materialsController.add);
         
-        // this.get('#/materials/:id', materialsController.one);
-        this.get('#/material-one', materialsController.one);
+        this.get('#/materials/:id', materialsController.one);
+        // this.get('#/material/one', materialsController.one);
     })
     
     $(function(){

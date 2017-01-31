@@ -1,7 +1,7 @@
 <h1>Materials Works!</h1>
-{{#each added}}
-    <p>{{text}}</p>
-    <p><a href="#/material-one">{{title}}</a></p>
-    <p>{{author}}</p>
+{{#each added as |val valId|}}
+    <p>{{added.text}}</p>
+    <p><a href="#/materials/{{valId}}">{{val.title}}</a></p>
+    <p>{{val.author}}</p>
 {{/each}}
 

@@ -86,15 +86,15 @@ var data = function(){
     //     return promise
     // }
     
-      function threadById(id) {
-        var promise = new Promise(function(resolve, reject) {
-        //   $.getJSON(`api/materials/${id}`, function(res) {
-        //     resolve(res);
+    //   function threadById(id) {
+    //     var promise = new Promise(function(resolve, reject) {
+    //     //   $.getJSON(`api/materials/${id}`, function(res) {
+    //     //     resolve(res);
               
-        //   });
-        });
-        return promise;
-     }
+    //     //   });
+    //     });
+    //     return promise;
+    //  }
     
     
     return{
@@ -106,7 +106,7 @@ var data = function(){
         todos:{
             // get: materialsGet,
             // add: materialAdd,
-            getById: threadById
+            // getById: threadById
         }
     }
 }();
