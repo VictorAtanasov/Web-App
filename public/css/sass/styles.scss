@@ -1,8 +1,79 @@
-.test{
-    color: blue
+// node-sass styles.scss ../styles.css -w
+body {
+    background-color: #f4f4f4;
+    padding-top: 7px;
+} 
+
+header {
+    margin-left: 7.6%;
+    margin-right: 8.2%;
 }
 
-.hidden{
-    display: none;
+#navbar-brand-custom{
+    margin-left: 0;
+    padding-top: 25px;
 }
 
+.navbar{
+    min-height: 100px;
+    background-color: #fff;
+}
+
+.navbar-custom{
+    margin-top: 41px;
+         a {
+            font-family: 'Kreon', serif;
+            font-size: 15px;
+            color: #717171;
+            margin-right: -5px;
+        }
+}
+
+.navbar-default .navbar-nav > li > a:hover{
+    color: #437d8b;
+}
+
+#nav-blog{
+    margin-right: 0;
+}
+
+.nav-icons{
+    color: #e3e3e3;
+    margin-right: 5px;
+    margin-top: 10px;
+    font-size: 13px;
+    margin-left: 4px;
+}
+
+.nav-search{
+    margin-left: 15px;
+    margin-right: -13px;
+    margin-top: 1px;
+}
+
+.input-group-sm > .form-control{
+    border-radius: 0;
+    height: 27px;
+    border-bottom: 1px solid #d8d8d8;
+    border-left: 1px solid #d8d8d8;
+    border-top: none;
+    border-right: none;
+    font-size: 11px;
+    font-style: italic;
+    padding-left: 12px;
+    background-color: #f9f9f9;
+}
+
+.glyphicon-search{
+    font-size: 13px;
+    color: #c2c2c2;
+    margin-top: -3px;
+}
+@media (max-width: 768px){
+    .navbar{
+        min-height: 50px;
+    }   
+    #navbar-brand-custom{
+    display: none
+}
+}

@@ -8,10 +8,10 @@
         this.get('#/login', usersController.login);
         this.get('#/register', usersController.register);
         
-        this.get('#/materials', materialsController.all);
-        this.get('#/materials/add', materialsController.add);
+        this.get('#/fan-fiction', materialsController.all);
+        this.get('#/fan-fiction/add', materialsController.add);
         
-        this.get('#/materials/:id', materialsController.one);
+        this.get('#/fan-fiction/:id', materialsController.one);
         // this.get('#/material/one', materialsController.one);
     })
     

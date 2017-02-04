@@ -4,7 +4,7 @@ var materialsController = function () {
     const dbRef = firebase.database().ref();
     
     dbRef.on('value', function (snap) {
-      console.log(snap.val());
+      // console.log(snap.val());
       templates.get('materials')
         .then(function (template) {
           context.$element().html(template(snap.val()));
@@ -40,7 +40,7 @@ var materialsController = function () {
             author: userName
           })
           toastr.success('Added!');
-          context.redirect('#/materials');
+          context.redirect('#/fan-fiction');
         });
       });
   }
