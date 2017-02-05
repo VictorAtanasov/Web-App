@@ -10,9 +10,11 @@
         
         this.get('#/fan-fiction', materialsController.all);
         this.get('#/fan-fiction/add', materialsController.add);
-        
         this.get('#/fan-fiction/:id', materialsController.one);
-        // this.get('#/material/one', materialsController.one);
+        
+        this.get('#/book-categories', categoriesController.all);
+        this.get('#/book-categories/:id', categoriesController.one);
+        this.get('#/book-categories/:id/:id', categoriesController.book);
     })
     
     $(function(){
