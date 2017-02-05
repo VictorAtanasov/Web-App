@@ -2,7 +2,7 @@ body {
   background-color: #f4f4f4;
   padding-top: 7px; }
 
-header {
+header, footer {
   margin-left: 7.6%;
   margin-right: 8.2%; }
 
@@ -56,6 +56,43 @@ header {
   font-size: 13px;
   color: #c2c2c2;
   margin-top: -3px; }
+
+footer {
+  background-color: #f9f9f9;
+  border-top: 1px solid #ececec; }
+  footer li {
+    color: #929292;
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 12px;
+    margin-bottom: 8px;
+    margin-left: -22px; }
+    footer li a {
+      text-decoration: none;
+      color: #929292; }
+  footer h3 {
+    color: #1d1d1d;
+    font-family: 'Kreon', serif;
+    font-size: 20px;
+    margin-bottom: 13px; }
+  footer .container-fluid {
+    padding-top: 16px;
+    padding-right: 20px;
+    padding-left: 31px; }
+  footer img {
+    width: 142px;
+    height: 36px;
+    margin-top: 22px;
+    margin-bottom: 7px; }
+  footer p {
+    color: #929292;
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 12px; }
+  footer .copyright {
+    font-size: 12px;
+    font-family: 'Kreon', serif;
+    color: #717171; }
+  footer .footerText {
+    margin-left: 3px; }
 
 @media (max-width: 768px) {
   .navbar {

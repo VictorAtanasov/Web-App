@@ -1,4 +1,6 @@
 // node-sass styles.scss ../styles.css -w
+
+//NAVIGATION
 body {
     background-color: #f4f4f4;
     padding-top: 7px;
@@ -69,6 +71,64 @@ header {
     color: #c2c2c2;
     margin-top: -3px;
 }
+//END of NAVIGATION
+
+//FOOTER
+footer {
+    @extend header;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ececec;
+        li {
+            color: #929292;
+            font-family: 'Droid Sans', sans-serif;
+            font-size: 12px;
+            margin-bottom: 8px;
+            margin-left: -22px;
+                a {
+                    text-decoration: none;
+                    color: #929292;
+                }
+        }
+
+        h3 {
+            color: #1d1d1d;
+            font-family: 'Kreon', serif;
+            font-size: 20px;
+            margin-bottom: 13px;
+        }
+
+        .container-fluid {
+            padding-top: 16px;
+            padding-right: 20px;
+            padding-left: 31px;
+        }
+
+        img {
+            width: 142px;
+            height: 36px;
+            margin-top: 22px;
+            margin-bottom: 7px;
+        }
+
+        p {
+            color: #929292;
+            font-family: 'Droid Sans', sans-serif;
+            font-size: 12px;
+        }
+
+        .copyright{
+            font-size: 12px;
+            font-family: 'Kreon', serif;
+            color: #717171
+        }
+
+        .footerText{
+            margin-left: 3px;
+        }
+}
+
+//END of FOOTER
+
 @media (max-width: 768px){
     .navbar{
         min-height: 50px;
@@ -77,3 +137,5 @@ header {
     display: none
 }
 }
+
+// node-sass styles.scss ../styles.css -w
