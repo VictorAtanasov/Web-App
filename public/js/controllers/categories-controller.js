@@ -2,9 +2,7 @@ var categoriesController = function() {
 
   function all(context) {
     const dbRef = firebase.database().ref();
-    
     dbRef.on('value', function (snap) {
-      //console.log(snap.val());
       templates.get('categories')
         .then(function (template) {
           context.$element().html(template(snap.val()));
@@ -14,12 +12,10 @@ var categoriesController = function() {
 
   function one(context) {
     var detailId = context.params.id;
+    //console.log(detailId)
     const dbRef = firebase.database().ref();
-    //console.log(a)
     dbRef.on('value', function (snap) {
-      var detail = snap.val().books[detailId];
-      //console.log(detail)
-      
+      var detail = snap.val().books[detailId]; 
       templates.get('category')
         .then(function (template) {
           context.$element().html(template(detail));
@@ -40,6 +36,16 @@ var categoriesController = function() {
         });
     })
   }
+
+  // function categories(context) {
+  //   const dbRef = firebase.database().ref();
+  //   dbRef.on('value', function (snap) {
+  //     templates.get('categories')
+  //       .then(function (template) {
+  //         context.$element().html(template(snap.val()));
+  //       });
+  //   })
+  // }
 
   return {
     all: all,

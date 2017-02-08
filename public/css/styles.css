@@ -2,7 +2,7 @@ body {
   background-color: #f4f4f4;
   padding-top: 7px; }
 
-header, footer {
+header, footer, .categoriesWrapper {
   margin-left: 7.6%;
   margin-right: 8.2%; }
 
@@ -12,15 +12,20 @@ header, footer {
 
 .navbar {
   min-height: 100px;
-  background-color: #fff; }
+  background-color: #fff;
+  border-radius: 0; }
 
 .navbar-custom {
-  margin-top: 41px; }
+  margin-top: 41px;
+  margin-bottom: 0; }
   .navbar-custom a {
-    font-family: 'Kreon', serif;
+    font-family: "Kreon", serif;
     font-size: 15px;
     color: #717171;
     margin-right: -5px; }
+
+.navbar-default {
+  border: none; }
 
 .navbar-default .navbar-nav > li > a:hover {
   color: #437d8b; }
@@ -62,7 +67,7 @@ footer {
   border-top: 1px solid #ececec; }
   footer li {
     color: #929292;
-    font-family: 'Droid Sans', sans-serif;
+    font-family: "Droid Sans", sans-serif;
     font-size: 12px;
     margin-bottom: 8px;
     margin-left: -22px; }
@@ -71,7 +76,7 @@ footer {
       color: #929292; }
   footer h3 {
     color: #1d1d1d;
-    font-family: 'Kreon', serif;
+    font-family: "Kreon", serif;
     font-size: 20px;
     margin-bottom: 13px; }
   footer .container-fluid {
@@ -85,14 +90,100 @@ footer {
     margin-bottom: 7px; }
   footer p {
     color: #929292;
-    font-family: 'Droid Sans', sans-serif;
+    font-family: "Droid Sans", sans-serif;
     font-size: 12px; }
   footer .copyright {
     font-size: 12px;
-    font-family: 'Kreon', serif;
+    font-family: "Kreon", serif;
     color: #717171; }
   footer .footerText {
     margin-left: 3px; }
+
+.categoriesWrapper {
+  background-color: #fff;
+  font-family: "Kreon", serif; }
+  .categoriesWrapper a {
+    text-decoration: none;
+    color: #929292; }
+  .categoriesWrapper h1 {
+    font-size: 27px;
+    margin-bottom: 6px; }
+  .categoriesWrapper h3 {
+    font-size: 20px;
+    color: #929292;
+    margin-top: 0; }
+  .categoriesWrapper h4 {
+    font-family: "Kreon", serif;
+    font-size: 28px; }
+    .categoriesWrapper h4 a {
+      color: #1d1d1d; }
+  .categoriesWrapper .img-thumbnail {
+    width: 200px;
+    height: 200px; }
+  .categoriesWrapper .breadcrumbs {
+    margin-top: 11px;
+    font-size: 14px; }
+  .categoriesWrapper .container-fluid {
+    padding-left: 5%;
+    padding-right: 5%; }
+  .categoriesWrapper .titleWrapper {
+    background: -moz-linear-gradient(top, #fafafa 0%, #ffffff 41%, #ffffff 49%, #ffffff 58%, #fafafa 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #fafafa 0%, #ffffff 41%, #ffffff 49%, #ffffff 58%, #fafafa 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #fafafa 0%, #ffffff 41%, #ffffff 49%, #ffffff 58%, #fafafa 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#fafafa',GradientType=0 );
+    /* IE6-9 */
+    margin-top: 25px;
+    border-bottom: 1px solid #eaeaea;
+    border-top: 1px solid #eaeaea;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 26px;
+    margin-bottom: 22px; }
+  .categoriesWrapper .categorySubtitle {
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    margin-bottom: 17px; }
+    .categoriesWrapper .categorySubtitle p {
+      font-size: 15px;
+      color: #d0d0d0;
+      margin-bottom: 0; }
+  .categoriesWrapper .categoryDescription {
+    font-family: "Droid Sans", sans-serif;
+    font-size: 12px;
+    color: #929292; }
+  .categoriesWrapper #categoryDescriptionWrapper {
+    padding-left: 0; }
+  .categoriesWrapper .category {
+    margin-bottom: 75px; }
+    .categoriesWrapper .category h4 {
+      margin-bottom: 15px; }
+    .categoriesWrapper .category .row {
+      margin-bottom: 17px; }
+    .categoriesWrapper .category .btn {
+      float: right; }
+  .categoriesWrapper aside {
+    margin-top: 11px;
+    margin-left: 29px; }
+    .categoriesWrapper aside ul {
+      margin-bottom: 34px; }
+    .categoriesWrapper aside li {
+      color: #929292;
+      font-family: "Droid Sans", sans-serif;
+      font-size: 12px;
+      margin-bottom: 8px;
+      margin-left: -22px;
+      margin-left: -25px; }
+      .categoriesWrapper aside li a {
+        text-decoration: none;
+        color: #929292; }
+    .categoriesWrapper aside h3 {
+      color: #1d1d1d;
+      font-size: 20px; }
 
 @media (max-width: 768px) {
   .navbar {

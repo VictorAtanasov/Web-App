@@ -1,9 +1,38 @@
 // node-sass styles.scss ../styles.css -w
 
+//VARS
+$font-stack: 'Kreon', serif;
+$links-stack: 'Droid Sans', sans-serif;
+$primary-color: #717171;
+$links-color: #929292;
+
+//END of VARS
+
+//MIXINs
+@mixin gradintTitle {
+    background: -moz-linear-gradient(top,  #fafafa 0%, #ffffff 41%, #ffffff 49%, #ffffff 58%, #fafafa 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #fafafa 0%,#ffffff 41%,#ffffff 49%,#ffffff 58%,#fafafa 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #fafafa 0%,#ffffff 41%,#ffffff 49%,#ffffff 58%,#fafafa 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#fafafa',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin unorderedList {
+    color: $links-color;
+            font-family: $links-stack;
+            font-size: 12px;
+            margin-bottom: 8px;
+            margin-left: -22px;
+                a {
+                    text-decoration: none;
+                    color: $links-color;
+                }
+}
+//END of MIXINs
+
 //NAVIGATION
 body {
     background-color: #f4f4f4;
-    padding-top: 7px;
+    padding-top: 7px
 } 
 
 header {
@@ -19,16 +48,22 @@ header {
 .navbar{
     min-height: 100px;
     background-color: #fff;
+    border-radius: 0;
 }
 
 .navbar-custom{
     margin-top: 41px;
+    margin-bottom: 0;
          a {
-            font-family: 'Kreon', serif;
+            font-family: $font-stack;
             font-size: 15px;
-            color: #717171;
+            color: $primary-color;
             margin-right: -5px;
         }
+}
+
+.navbar-default{
+    border: none;
 }
 
 .navbar-default .navbar-nav > li > a:hover{
@@ -79,20 +114,12 @@ footer {
     background-color: #f9f9f9;
     border-top: 1px solid #ececec;
         li {
-            color: #929292;
-            font-family: 'Droid Sans', sans-serif;
-            font-size: 12px;
-            margin-bottom: 8px;
-            margin-left: -22px;
-                a {
-                    text-decoration: none;
-                    color: #929292;
-                }
+            @include unorderedList;
         }
 
         h3 {
             color: #1d1d1d;
-            font-family: 'Kreon', serif;
+            font-family: $font-stack;
             font-size: 20px;
             margin-bottom: 13px;
         }
@@ -111,15 +138,15 @@ footer {
         }
 
         p {
-            color: #929292;
-            font-family: 'Droid Sans', sans-serif;
+            color: $links-color;
+            font-family: $links-stack;
             font-size: 12px;
         }
 
         .copyright{
             font-size: 12px;
-            font-family: 'Kreon', serif;
-            color: #717171
+            font-family: $font-stack;
+            color: $primary-color;
         }
 
         .footerText{
@@ -129,12 +156,111 @@ footer {
 
 //END of FOOTER
 
+//Book Categoties
+.categoriesWrapper{
+    @extend header;
+    background-color: #fff;
+    font-family: $font-stack;
+
+        a {
+            text-decoration: none;
+            color: $links-color;
+        }
+        h1 {
+            font-size: 27px;
+            margin-bottom: 6px;
+        }
+        h3 {
+            font-size: 20px;
+            color: $links-color;
+            margin-top: 0;
+        }
+        h4{
+            font-family: $font-stack;
+            font-size: 28px;
+                a {
+                    color: #1d1d1d;
+                }
+        }
+        .img-thumbnail{
+            width: 200px;
+            height: 200px;
+        }
+        .breadcrumbs{
+            margin-top: 11px;
+            font-size: 14px;
+        }
+        .container-fluid{
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+        .titleWrapper{
+            @include gradintTitle;
+            margin-top: 25px;
+            border-bottom: 1px solid #eaeaea;
+            border-top: 1px solid #eaeaea;
+            text-align: center;
+            padding-top: 15px;
+            padding-bottom: 26px;
+            margin-bottom: 22px;
+        }
+        .categorySubtitle{
+            border-top: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 4px;
+            padding-top: 4px;
+            margin-bottom: 17px;
+                p {
+                    font-size: 15px;
+                    color: #d0d0d0;
+                    margin-bottom: 0;
+                }
+        }
+        .categoryDescription{
+            font-family: $links-stack;
+            font-size: 12px;
+            color: $links-color;
+        }
+        #categoryDescriptionWrapper{
+            padding-left: 0;
+        }
+        .category{
+            margin-bottom: 75px;
+                h4{
+                    margin-bottom: 15px;
+                }
+                .row{
+                    margin-bottom: 17px;
+                }
+                .btn{
+                    float: right;
+                }
+        }
+        aside{
+            margin-top: 11px;
+            margin-left: 29px;
+                ul{
+                    margin-bottom: 34px;
+                }
+                li {
+                    @include unorderedList;
+                    margin-left: -25px;
+                }
+                h3{
+                    color: #1d1d1d;
+                    font-size: 20px;
+                }
+        }
+}
+
+//END of Book Categories
+
 @media (max-width: 768px){
     .navbar{
         min-height: 50px;
     }   
     #navbar-brand-custom{
-    display: none
+    display: none;
 }
 }
 
