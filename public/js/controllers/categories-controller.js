@@ -15,7 +15,7 @@ var categoriesController = function() {
     //console.log(detailId)
     const dbRef = firebase.database().ref();
     dbRef.on('value', function (snap) {
-      var detail = snap.val().books[detailId]; 
+      var detail = snap.val().books[detailId];
       templates.get('category')
         .then(function (template) {
           context.$element().html(template(detail));

@@ -1,3 +1,133 @@
-{{#each this as |val valId|}}
-    <p><a href="#/book-categories/{{val.bookCategory}}/{{valId}}">{{val.title}}</a></p>
-{{/each}}
+{{!--{{#each this as |val valId|}}
+<p><a href="#/book-categories/{{val.bookCategory}}/{{valId}}">{{val.title}}</a></p>
+{{/each}}--}}
+<div class="categoriesWrapper">
+    <div class="container-fluid">
+        {{!--Breadcrumb--}}
+        <p class="breadcrumbs">
+            <a href="#/home">
+                Home
+            </a>
+            <span>&raquo;</span>
+            <a href="#/book-categories">
+                Book Categories
+            </a>
+            <span>&raquo;</span>
+            {{#0}}
+                <a href="#/book-categories/{{bookCategory}}"> {{category}} </a>      
+            {{/0}}
+        </p>
+        {{!--Title--}}
+        <div class="titleWrapper">
+            <h1>
+                {{#0}}
+                    {{category}} Fantasy Books
+                {{/0}}
+            </h1>
+            <h3>
+                {{#0}}
+                    Browse all {{category}} Fantasy Books
+                {{/0}}
+            </h3>
+        </div>
+        {{!--Category--}}
+        <div class="row">
+            <div class="col-md-8">
+                {{#each this as |val valId|}}
+                <div class="category">
+                    <h4>
+                        <a href="#/book-categories/{{val.bookCategory}}/{{valId}}">{{val.title}}</a>
+                    </h4>
+                    <div class="categorySubtitle">
+                        <p>Book rating: {{rating}}</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <img src="{{val.imageUrl}}" alt="{{val.title}}" class="img-thumbnail">
+                        </div>
+                        <div class="col-md-7" id="categoryDescriptionWrapper">
+                            <p class="categoryDescription">{{val.description}}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="#/book-categories/{{val.bookCategory}}/{{valId}}" class="btn btn-default">View Book</a>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            <div class="col-sm-4">
+                <aside>
+                    <h3>
+                        Best Sellers
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="#/book-categories/Dark-Fantasy/0">The Blood Mirror</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Epic-Fantasy/0">Reign of Madness</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Romantic-Fantasy/0">Graceling</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Sci-fi-Fantasy/0">Dune</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Vampire-Fantasy/0">Dracula</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Young-Adult-Fantasy/2">Everlost</a>
+                        </li>
+                    </ul>
+                    <h3>
+                        Fan Fiction
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="#">Add Fan Fiction</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Fan Fiction</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Fan Fiction</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Fan Fiction</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Fan Fiction</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Fan Fiction</a>
+                        </li>
+                    </ul>
+                    <h3>
+                        Blog
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="#">Add Blog</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Blog</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Blog</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Blog</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Blog</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Blog</a>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+    </div>
+</div>
