@@ -1,14 +1,88 @@
-<h2>Add new material</h2>
+{{!--
+<h2>Add new FanFiction Story</h2>
 <div class="form-group">
-    <label for="tb-material-text">Title: </label>
+    <label for="tb-material-title">Title: </label>
     <input id="tb-material-title" class="form-control">
 </div>
 <div class="form-group">
     <label for="tb-material-des">Description: </label>
-    <input id="tb-material-text" class="form-control">
+    <input id="tb-material-des" class="form-control">
 </div>
 <div class="form-group">
-    <label for="tb-material-link">Image Link: (Optional) </label>
+    <label for="tb-material-text">Story: </label>
+    <input type="text" id="tb-material-text" class="form-control">
+    <textarea class="form-control" id="tb-material-text"></textarea>
+</div>
+<div class="form-group">
+    <label for="tb-material-link">Image Link: </label>
     <input id="tb-material-link" class="form-control">
 </div>
-<button class="btn btn-warning" id="btn-add">Add Material</button>
+<button class="btn btn-warning hidden" id="btn-add">Add Material</button>
+<div class="alert alert-danger" role="alert" id="alertMsg">Log In or Register to Add Fan Fiction</div>--}}
+<div class="categoriesWrapper">
+    <div class="container-fluid">
+        {{!--Breadcrumb--}}
+        <p class="breadcrumbs">
+            <a href="#/home">
+                Home
+            </a>
+            <span>&raquo;</span>
+            <span>
+                Add FanFiction
+            </span>
+        </p>
+        {{!--Title--}}
+        <div class="titleWrapper">
+            <h1>
+                Add New Fan Fiction Story
+            </h1>
+            <h3>
+                Add Your Story
+            </h3>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Title</div>
+                    <div class="panel-body">
+                        <input id="tb-material-title" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Story</div>
+                    <div class="panel-body">
+                        <textarea class="form-control" id="tb-material-text"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Short Description</div>
+                    <div class="panel-body">
+                        <input id="tb-material-des" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Image Link</div>
+                    <div class="panel-body">
+                        <input id="tb-material-link" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 pull-right">
+                <button class="btn btn-warning hidden" id="btn-add">Add Material</button>
+                <div class="alert alert-danger" role="alert" id="alertMsg">Log In or Register to Add Fan Fiction</div>
+            </div>
+        </div>
+    </div>
+</div>

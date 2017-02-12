@@ -42,7 +42,7 @@ var usersController = function () {
                         if (firebaseUser) {
                             var user = firebase.auth().currentUser;
                             user.updateProfile({
-                            displayName: userName
+                                displayName: userName
                             })
                         }
                     })

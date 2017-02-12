@@ -1,7 +1,126 @@
-<h1>Materials Works!</h1>
-{{#each added as |val valId|}}
+{{!--{{#each added as |val valId|}}
     <p><a href="#/fan-fiction/{{valId}}">{{val.title}}</a></p>
     <p>{{val.text}}</p>
     <p>by: {{val.author}}</p>
-{{/each}}
+{{/each}}--}}
+<div class="categoriesWrapper">
+    <div class="container-fluid">
+        {{!--Breadcrumb--}}
+        <p class="breadcrumbs">
+            <a href="#/home">
+                Home
+            </a>
+            <span>&raquo;</span>
+            <span>Fan Fiction</span>
+        </p>
+        {{!--Title--}}
+        <div class="titleWrapper">
+            <h1>
+                Fan Fiction
+            </h1>
+            <h3>
+                Add Fan Fiction
+            </h3>
+        </div>
+        {{!--Category--}}
+        <div class="row">
+            <div class="col-md-8">
+                {{#each added as |val valId|}}
+                <div class="category">
+                    <h4>
+                        <a href="#/fan-fiction/{{valId}}">{{val.title}}</a>
+                    </h4>
+                    <div class="categorySubtitle">
+                        <p>Author: {{val.author}}</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <img src="{{val.imgUrl}}" alt="{{val.title}}" class="img-thumbnail">
+                        </div>
+                        <div class="col-md-7" id="categoryDescriptionWrapper">
+                            <p class="categoryDescription">{{val.description}}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="#/fan-fiction/{{valId}}" class="btn btn-default">Read the Story</a>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            <div class="col-sm-4">
+                <aside>
+                    <h3>
+                        Book Categories
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="#/book-categories/Dark-Fantasy">Dark Fantasy Books</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Epic-Fantasy">Epic Fantasy Books</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Romantic-Fantasy">Romantic Fantasy Books</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Sci-fi-Fantasy">Sci-fi Fantasy Books</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Vampire-Fantasy">Vampire Fantasy Books</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Young-Adult-Fantasy">Young Adult Fantasy Books</a>
+                        </li>
+                    </ul>
+                    <h3>
+                        Best Sellers
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="#/book-categories/Dark-Fantasy/0">The Blood Mirror</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Epic-Fantasy/0">Reign of Madness</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Romantic-Fantasy/0">Graceling</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Sci-fi-Fantasy/0">Dune</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Vampire-Fantasy/0">Dracula</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Young-Adult-Fantasy/2">Everlost</a>
+                        </li>
+                    </ul>
+                    <h3>
+                        Fan Fiction
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="#">Add Fan Fiction</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Fan Fiction</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Fan Fiction</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Fan Fiction</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Fan Fiction</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Fan Fiction</a>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+    </div>
+</div>
 

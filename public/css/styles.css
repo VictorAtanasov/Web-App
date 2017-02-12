@@ -62,6 +62,9 @@ header, footer, .categoriesWrapper {
   color: #c2c2c2;
   margin-top: -3px; }
 
+.caret {
+  display: none; }
+
 footer {
   background-color: #f9f9f9;
   border-top: 1px solid #ececec; }
@@ -184,6 +187,9 @@ footer {
     .categoriesWrapper aside h3 {
       color: #1d1d1d;
       font-size: 20px; }
+
+#tb-material-text {
+  height: 170px; }
 
 @media (max-width: 768px) {
   .navbar {

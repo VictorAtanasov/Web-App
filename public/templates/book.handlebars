@@ -1,2 +1,123 @@
-<p>{{title}}</p>
-<p>{{author}}</p>
+{{!--<p>{{title}}</p>
+<p>{{author}}</p>--}}
+<div class="categoriesWrapper">
+    <div class="container-fluid">
+        {{!--Breadcrumb--}}
+        <p class="breadcrumbs">
+            <a href="#/home">
+                Home
+            </a>
+            <span>&raquo;</span>
+            <a href="#/book-categories">
+                Book Categories
+            </a>
+            <span>&raquo;</span>
+            <a href="#/book-categories/{{bookCategory}}"> {{bookCategory}} </a>
+            <span>&raquo;</span>
+            <span>{{title}}</span>      
+        </p>
+        {{!--Title--}}
+        <div class="titleWrapper">
+            <h1>
+                {{title}}
+            </h1>
+            <h3>
+                {{author}}
+            </h3>
+        </div>
+        {{!--Category--}}
+        <div class="row">
+            <div class="col-md-8">
+                <div class="category">
+                    <div class="categorySubtitle">
+                        <p>Book Price: &#36;{{price}}</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <img src="{{imageUrl}}" alt="{{title}}" class="img-thumbnail">
+                        </div>
+                        <div class="col-md-7" id="categoryDescriptionWrapper">
+                            <p class="categoryDescription">{{description}}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="#/home" class="btn btn-default">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <aside>
+                    <h3>
+                        Best Sellers
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="#/book-categories/Dark-Fantasy/0">The Blood Mirror</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Epic-Fantasy/0">Reign of Madness</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Romantic-Fantasy/0">Graceling</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Sci-fi-Fantasy/0">Dune</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Vampire-Fantasy/0">Dracula</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Young-Adult-Fantasy/2">Everlost</a>
+                        </li>
+                    </ul>
+                    <h3>
+                        Fan Fiction
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="#">Add Fan Fiction</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Fan Fiction</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Fan Fiction</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Fan Fiction</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Fan Fiction</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Fan Fiction</a>
+                        </li>
+                    </ul>
+                    <h3>
+                        Blog
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="#">Add Blog</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Blog</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Blog</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Blog</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Blog</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Blog</a>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+    </div>
+</div>
