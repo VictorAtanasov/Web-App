@@ -27,6 +27,14 @@ $links-color: #929292;
                     color: $links-color;
                 }
 }
+
+@mixin gradintComments {
+    background: #fafafa; /* Old browsers */
+    background: -moz-linear-gradient(top,  #fafafa 0%, #ffffff 21%, #ffffff 83%, #fafafa 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #fafafa 0%,#ffffff 21%,#ffffff 83%,#fafafa 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #fafafa 0%,#ffffff 21%,#ffffff 83%,#fafafa 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#fafafa',GradientType=0 ); /* IE6-9 */
+}
 //END of MIXINs
 
 //NAVIGATION
@@ -255,7 +263,38 @@ footer {
                     font-size: 20px;
                 }
         }
+        .comments{
+            margin-top: 32px
+        }
+        .comment-photo{
+            width: 68px;
+            height: 68px;
+            float: left;
+            margin-right: 16px;
+        }
+        .commentsWrapper{
+            @include gradintComments;
+            border: 1px solid #f0f0f0;
+            padding: 16px 12px 12px 16px;
+            margin-bottom: 27px;
+                h3{
+                    font-family: $font-stack;
+                    font-size: 20px;
+                    color: #1d1d1d;
+                    display: inline-block;
+                }
+                .date{
+                    font-family: Georgia, 'Times New Roman', Times, serif;
+                    color: #d4d4d4;
+                    font-size: 12px;
+                    font-style: italic; 
+                    float: right;
+                }
+
+        }
+        
 }
+
 
 //END of Book Categories
 

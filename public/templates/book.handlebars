@@ -43,6 +43,35 @@
                     <div>
                         <a href="#/home" class="btn btn-default">Buy Now</a>
                     </div>
+                    {{!--Comments--}}
+                    <div class="comments">
+                        <h4>Comments</h4>
+                        {{#each this}}
+                            {{#if comment}}
+                                <div class="commentsWrapper">
+                                    {{!--{{#if photoUrl}}--}}
+                                        <img src="{{photoUrl}}" class="img-thumbnail comment-photo"> 
+                                    {{!--{{/if}} --}}
+                                    {{!--{{#if author}}--}}
+                                        <h3>{{author}}</h3>
+                                    {{!--{{/if}} --}}
+                                    {{!--{{#if date}}--}}
+                                        <span class="date">{{date}}</span>
+                                    {{!--{{/if}}
+                                    {{#if comment}}--}}
+                                        <p class="categoryDescription">{{comment}}</p>
+                                    {{!--{{/if}} --}}
+                                </div>
+                            {{/if}}
+                        {{/each}}
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="tb-comment">Your Comment </label>
+                            <input id="tb-comment" class="form-control">
+                        </div>
+                        <button class="btn btn-default" id="btn-add-comment">Add Comment</button>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-4">

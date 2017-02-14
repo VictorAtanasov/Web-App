@@ -22,17 +22,17 @@ var materialsController = function () {
         var user = firebase.auth().currentUser;
         var userName = user.displayName;
 
-         //Fields Selection
+        //Fields Selection
         const titleField = document.getElementById('tb-material-title');
         const textField = document.getElementById('tb-material-text');
         const linkField = document.getElementById('tb-material-link');
         const desField = document.getElementById('tb-material-des');
         const buttonAdd = document.getElementById('btn-add');
         const alertMsg = document.getElementById('alertMsg');
-        
+
         //Add realtime listener
         firebase.auth().onAuthStateChanged(firebaseUser => {
-          if (firebaseUser) { 
+          if (firebaseUser) {
             alertMsg.classList.add('hidden');
             buttonAdd.classList.remove('hidden')
           }
@@ -62,15 +62,42 @@ var materialsController = function () {
   function one(context) {
     var detailId = context.params.id;
     const dbRef = firebase.database().ref();
-
     dbRef.on('value', function (snap) {
       var detail = snap.val().added[detailId];
-
+      console.log(detail)
       templates.get('material-details')
         .then(function (template) {
           context.$element().html(template(detail));
         });
     })
+
+    function comments() {
+      //Database
+      const databaseRef = firebase.database().ref().child('added');
+      const materialRef = databaseRef.child(detailId);
+
+      //Fields Selection
+      const commentField = document.getElementById('tb-comment');
+      const btnAddComment = document.getElementById('btn-add-comment');
+
+      //User
+      var user = firebase.auth().currentUser;
+      var userName = user.displayName;
+      var photo = user.photoURL;
+
+      btnAddComment.addEventListener('click', e => {
+        let comment = commentField.value;
+        let date = (new Date()).toString().split(' ').splice(1, 3).join(' ');
+        materialRef.push({
+          comment: comment,
+          photoUrl: photo,
+          author: userName,
+          date: date
+        })
+        toastr.success('Your Comment is Added!');
+      });
+    }
+    setTimeout(comments, 3000);
   }
 
   return {
