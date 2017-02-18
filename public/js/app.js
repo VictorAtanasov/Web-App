@@ -4,6 +4,8 @@
             this.redirect('#/home')
         });
         this.get('#/home', homeController.all);
+        this.get('#/about', aboutController.all);
+        this.get('#/blog', blogController.all);
 
         this.get('#/login', usersController.login);
         this.get('#/register', usersController.register);
@@ -15,6 +17,7 @@
         this.get('#/book-categories', categoriesController.all);
         this.get('#/book-categories/:id', categoriesController.one);
         this.get('#/book-categories/:id/:id', categoriesController.book);
+
     })
 
     $(function () {

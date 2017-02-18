@@ -31,7 +31,7 @@
                 <div class="category">
                     <div class="categorySubtitle">
                         <p>Book Price: &#36;{{price}}</p>
-                        <input type="hidden" class="rating" value="{{rating}}" data-readonly/>
+                        <p>Book Rating: <input type="hidden" class="rating" value="{{rating}}" data-readonly/></p>
                     </div>
                     <div class="row">
                         <div class="col-md-5">
@@ -50,18 +50,10 @@
                         {{#each this}}
                             {{#if comment}}
                                 <div class="commentsWrapper">
-                                    {{!--{{#if photoUrl}}--}}
-                                        <img src="{{photoUrl}}" class="img-thumbnail comment-photo"> 
-                                    {{!--{{/if}} --}}
-                                    {{!--{{#if author}}--}}
-                                        <h3>{{author}}</h3>
-                                    {{!--{{/if}} --}}
-                                    {{!--{{#if date}}--}}
-                                        <span class="date">{{date}}</span>
-                                    {{!--{{/if}}
-                                    {{#if comment}}--}}
-                                        <p class="categoryDescription">{{comment}}</p>
-                                    {{!--{{/if}} --}}
+                                    <img src="{{photoUrl}}" class="img-thumbnail comment-photo"> 
+                                    <h3>{{author}}</h3>
+                                    <span class="date">{{date}}</span>
+                                    <p class="categoryDescription">{{comment}}</p>
                                 </div>
                             {{/if}}
                         {{/each}}
@@ -78,26 +70,49 @@
             <div class="col-sm-4">
                 <aside>
                     <h3>
+                        Book Categories
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="#/book-categories/Dark-Fantasy">Dark Fantasy Books</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Epic-Fantasy">Epic Fantasy Books</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Romantic-Fantasy">Romantic Fantasy Books</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Sci-fi-Fantasy">Sci-fi Fantasy Books</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Vampire-Fantasy">Vampire Fantasy Books</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Young-Adult-Fantasy">Young Adult Fantasy Books</a>
+                        </li>
+                    </ul>
+                    <h3>
                         Best Sellers
                     </h3>
                     <ul>
                         <li>
-                            <a href="#/book-categories/Dark-Fantasy/0">The Blood Mirror</a>
+                            <a href="#/book-categories/Dark-Fantasy/The-Blood-Mirror">The Blood Mirror</a>
                         </li>
                         <li>
-                            <a href="#/book-categories/Epic-Fantasy/0">Reign of Madness</a>
+                            <a href="#/book-categories/Epic-Fantasy/Reign-of-Madness">Reign of Madness</a>
                         </li>
                         <li>
-                            <a href="#/book-categories/Romantic-Fantasy/0">Graceling</a>
+                            <a href="#/book-categories/Romantic-Fantasy/Graceling">Graceling</a>
                         </li>
                         <li>
-                            <a href="#/book-categories/Sci-fi-Fantasy/0">Dune</a>
+                            <a href="#/book-categories/Sci-fi-Fantasy/Dune">Dune</a>
                         </li>
                         <li>
-                            <a href="#/book-categories/Vampire-Fantasy/0">Dracula</a>
+                            <a href="#/book-categories/Vampire-Fantasy/Dracula">Dracula</a>
                         </li>
                         <li>
-                            <a href="#/book-categories/Young-Adult-Fantasy/2">Everlost</a>
+                            <a href="#/book-categories/Young-Adult-Fantasy/Everlost">Everlost</a>
                         </li>
                     </ul>
                     <h3>
@@ -121,29 +136,6 @@
                         </li>
                         <li>
                             <a href="#">Add Fan Fiction</a>
-                        </li>
-                    </ul>
-                    <h3>
-                        Blog
-                    </h3>
-                    <ul>
-                        <li>
-                            <a href="#">Add Blog</a>
-                        </li>
-                        <li>
-                            <a href="#">Add Blog</a>
-                        </li>
-                        <li>
-                            <a href="#">Add Blog</a>
-                        </li>
-                        <li>
-                            <a href="#">Add Blog</a>
-                        </li>
-                        <li>
-                            <a href="#">Add Blog</a>
-                        </li>
-                        <li>
-                            <a href="#">Add Blog</a>
                         </li>
                     </ul>
                 </aside>

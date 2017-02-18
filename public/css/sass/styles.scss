@@ -195,7 +195,7 @@ footer {
                 }
         }
         .img-thumbnail{
-            width: 200px;
+            width: auto;
             height: 200px;
         }
         .breadcrumbs{
@@ -303,14 +303,52 @@ footer {
             width: 100%;
         }
         .caption {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  padding: 15px;
-  min-height: 38px;
-  background-color: rgba(255, 255, 255, 0.5);
-  z-index: 50;
-}
+            font-family: $font-stack;
+            position: absolute;
+            bottom: 29%;
+            padding: 27px 30px 40px 40px;
+            min-height: 38px;
+            background-color: #565657;
+            opacity: 0.5;
+            margin-left: 13%;
+                .captionHeader{
+                    font-size: 28px;
+                    color: #fff;
+                    margin-bottom: 5px;
+                }
+                .captionBody{
+                    font-family: $links-stack;
+                    font-size: 12px;
+                    color: #fff;
+                    margin-bottom: 10px;
+                }
+                .captionButton{
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    padding: 10px;
+                    background-color: #100402;
+                    opacity: 1;
+                }
+                a {
+                    text-decoration: none;
+                    color: #7b9297;
+                }
+                a:hover{
+                    color: #7b9297;
+                }
+      } 
+        .slick-next {
+            right: 0;
+        }
+        .slick-prev {
+            left: 0;
+            z-index: 99
+        }
+        .slick-prev:before, .slick-next:before {
+            font-size: 20px;
+            opacity: 0.75
+        }
 }
 
 //END of HOME PAGE

@@ -73,29 +73,41 @@ var materialsController = function () {
 
     function comments() {
       //Database
-      const databaseRef = firebase.database().ref().child('added'); 
+      const databaseRef = firebase.database().ref().child('added');
       const materialRef = databaseRef.child(detailId);
 
       //Fields Selection
       const commentField = document.getElementById('tb-comment');
       const btnAddComment = document.getElementById('btn-add-comment');
 
-      //User
-      var user = firebase.auth().currentUser;
-      var userName = user.displayName;
-      var photo = user.photoURL;
 
-      btnAddComment.addEventListener('click', e => {
-        let comment = commentField.value;
-        let date = (new Date()).toString().split(' ').splice(1, 3).join(' ');
-        materialRef.push({
-          comment: comment,
-          photoUrl: photo,
-          author: userName,
-          date: date
-        })
-        toastr.success('Your Comment is Added!');
-      });
+
+
+      firebase.auth().onAuthStateChanged(firebaseUser => {
+        if (firebaseUser) {
+          btnAddComment.addEventListener('click', e => {
+            //User
+            var user = firebase.auth().currentUser;
+            var userName = user.displayName;
+            var photo = user.photoURL;
+            let comment = commentField.value;
+            let date = (new Date()).toString().split(' ').splice(1, 3).join(' ');
+            materialRef.push({
+              comment: comment,
+              photoUrl: photo,
+              author: userName,
+              date: date
+            })
+            toastr.success('Your Comment is Added!');
+          });
+        } else {
+          btnAddComment.addEventListener('click', e => {
+            toastr.warning('Register or LogIn to add a comment');
+          });
+        }
+      })
+
+
     }
     setTimeout(comments, 3000);
   }
