@@ -1,7 +1,26 @@
-<h1 class="test">Welcome to the</h1>
-<h2><strong>Victor's Application!</strong></h2>
-{{!--{{#each books as |val valId|}}
-    {{!--<p><a href="#/fan-fiction/{{valId}}">{{val.title}}</a></p>
-    <p>{{val.text}}</p>
-    <p><a href="#/fan-fiction/{{valId}}">{{valId}}</a></p>
-{{/each}}--}}
+<div class="homeWrapper">
+    <div class="slider single-item">
+        <div>
+            <img src="./../css/images/dark-fantasy.jpg" class="sliderImage">
+            <div class="caption">Slide 1 Caption</div>
+        </div>
+        <div><img src="./../css/images/epic-fantasy.jpg" class="sliderImage"></div>
+        <div><img src="./../css/images/romantic-fantasy.jpg" class="sliderImage"></div>
+        <div><img src="./../css/images/sci-fi-fantasy.jpg" class="sliderImage"></div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+<script>
+    $('.single-item').slick({
+        dots: true 
+    });
+</script>

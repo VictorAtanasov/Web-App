@@ -8,39 +8,36 @@ var categoriesController = function() {
           context.$element().html(template(snap.val()));
         });
     })
-  }
+  } 
 
   function one(context) {
     var detailId = context.params.id;
-    //console.log(detailId)
-    const dbRef = firebase.database().ref();
-    dbRef.on('value', function (snap) {
-      var detail = snap.val().books[detailId];
+    const dbRef = firebase.database().ref('books');
+    var query = dbRef.orderByChild("bookCategory").equalTo(detailId);
+    query.once("value", function(snapshot) {
       templates.get('category')
         .then(function (template) {
-          context.$element().html(template(detail));
+          context.$element().html(template(snapshot.val()));
         });
-    })
+    });
   }
 
   function book(context) {
-    var path = context.path.split( '/' );
-    var catId = path[3]; 
     var detailId = context.params.id;
-    const dbRef = firebase.database().ref().child('books');
+    const dbRef = firebase.database().ref().child('books').child(detailId);
     dbRef.on('value', function (snap) {
-      var detail = snap.val()[catId][detailId];
+      var detail = snap.val();
       templates.get('book')
         .then(function (template) {
           context.$element().html(template(detail));
         });
-    });
+    })
 
 
     function comments() {
       //Database
       //const databaseRef = firebase.database().ref().child('books');
-      const materialRef = dbRef.child(catId).child(detailId);
+      const materialRef = dbRef;
 
       //Fields Selection
       const commentField = document.getElementById('tb-comment');
@@ -60,21 +57,13 @@ var categoriesController = function() {
           author: userName,
           date: date
         })
+        //context.redirect('#/book-categories/'+ catId);
         toastr.success('Your Comment is Added!');
       });
     }
     setTimeout(comments, 3000);
   }
 
-  // function categories(context) {
-  //   const dbRef = firebase.database().ref();
-  //   dbRef.on('value', function (snap) {
-  //     templates.get('categories')
-  //       .then(function (template) {
-  //         context.$element().html(template(snap.val()));
-  //       });
-  //   })
-  // }
 
   return {
     all: all,

@@ -31,6 +31,7 @@
                 <div class="category">
                     <div class="categorySubtitle">
                         <p>Book Price: &#36;{{price}}</p>
+                        <input type="hidden" class="rating" value="{{rating}}" data-readonly/>
                     </div>
                     <div class="row">
                         <div class="col-md-5">
@@ -150,3 +151,6 @@
         </div>
     </div>
 </div>
+<script>
+    $('.rating').rating();
+</script>

@@ -64,7 +64,7 @@ var materialsController = function () {
     const dbRef = firebase.database().ref();
     dbRef.on('value', function (snap) {
       var detail = snap.val().added[detailId];
-      console.log(detail)
+      //console.log(detail)
       templates.get('material-details')
         .then(function (template) {
           context.$element().html(template(detail));
@@ -73,7 +73,7 @@ var materialsController = function () {
 
     function comments() {
       //Database
-      const databaseRef = firebase.database().ref().child('added');
+      const databaseRef = firebase.database().ref().child('added'); 
       const materialRef = databaseRef.child(detailId);
 
       //Fields Selection

@@ -26,4 +26,7 @@ const dropdownEl = $('.dropdownEl');
 const dropdownLi = $('.dropdown');
 dropdownEl.on('click', function () {
     dropdownLi.removeClass('open')
-})
+});
+
+
+		
