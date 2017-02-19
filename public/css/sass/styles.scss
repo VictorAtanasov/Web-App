@@ -35,11 +35,149 @@ $links-color: #929292;
     background: linear-gradient(to bottom,  #fafafa 0%,#ffffff 21%,#ffffff 83%,#fafafa 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#fafafa',GradientType=0 ); /* IE6-9 */
 }
+
+@mixin subNavGradient {
+    background-color: #fff;
+    background-image: -webkit-repeating-linear-gradient(135deg, #f6f6f7, #f6f6f7 1px, transparent 2px, transparent 2px, #f6f6f7 3px);
+    background-image: -moz-repeating-linear-gradient(135deg, #f6f6f7, #f6f6f7 1px, transparent 2px, transparent 2px, #f6f6f7 3px);
+    background-image: -o-repeating-linear-gradient(135deg, #f6f6f7, #f6f6f7 1px, transparent 2px, transparent 2px, #f6f6f7 3px);
+    background-image: repeating-linear-gradient(135deg, #f6f6f7, #f6f6f7 1px, transparent 2px, transparent 2px, #f6f6f7 3px);
+    -webkit-background-size: 4px 4px;
+    -moz-background-size: 4px 4px;
+    background-size: 4px 4px;
+}
+
+@mixin bodyBackground {
+    background-color: #f4f4f4;
+        background-image: 
+         -webkit-linear-gradient(-135deg,  
+            transparent 20%, 
+            rgba(0,0,0,0.1) 20%,
+            rgba(0,0,0,0.1) 30%,
+            transparent 30%,
+            transparent 70%, 
+            rgba(0,0,0,0.1) 70%,
+            rgba(0,0,0,0.1) 80%,
+            transparent 80%),
+        -webkit-linear-gradient(135deg,  
+            transparent 20%,
+            #dedede 20%, 
+            #dedede 30%, 
+            rgba(0,0,0,0.1) 30%,
+            rgba(0,0,0,0.1) 40%,
+            transparent 40%, 
+            transparent 70%, 
+            #dedede 70%, 
+            #dedede 80%, 
+            rgba(0,0,0,0.1) 80%,
+            rgba(0,0,0,0.1) 90%,
+            transparent 90%)
+        ; 
+        background-image: 
+         -moz-linear-gradient(-135deg,  
+            transparent 20%, 
+            rgba(0,0,0,0.1) 20%,
+            rgba(0,0,0,0.1) 30%,
+            transparent 30%,
+            transparent 70%, 
+            rgba(0,0,0,0.1) 70%,
+            rgba(0,0,0,0.1) 80%,
+            transparent 80%,
+            transparent 100%),
+        -moz-linear-gradient(135deg,  
+            transparent 20%,
+            #dedede 20%, 
+            #dedede 30%, 
+            rgba(0,0,0,0.1) 30%,
+            rgba(0,0,0,0.1) 40%,
+            transparent 40%, 
+            transparent 70%, 
+            #dedede 70%, 
+            #dedede 80%, 
+            rgba(0,0,0,0.1) 80%,
+            rgba(0,0,0,0.1) 90%,
+            transparent 90%,
+            transparent 100%)
+        ; 
+        background-image: 
+         -ms-linear-gradient(-135deg,  
+            transparent 20%, 
+            rgba(0,0,0,0.1) 20%,
+            rgba(0,0,0,0.1) 30%,
+            transparent 30%,
+            transparent 70%, 
+            rgba(0,0,0,0.1) 70%,
+            rgba(0,0,0,0.1) 80%,
+            transparent 80%),
+        -ms-linear-gradient(135deg,  
+            transparent 20%,
+            #dedede 20%, 
+            #dedede 30%, 
+            rgba(0,0,0,0.1) 30%,
+            rgba(0,0,0,0.1) 40%,
+            transparent 40%, 
+            transparent 70%, 
+            #dedede 70%, 
+            #dedede 80%, 
+            rgba(0,0,0,0.1) 80%,
+            rgba(0,0,0,0.1) 90%,
+            transparent 90%)
+        ; 
+        background-image: 
+         -o-linear-gradient(-135deg,  
+            transparent 20%, 
+            rgba(0,0,0,0.1) 20%,
+            rgba(0,0,0,0.1) 30%,
+            transparent 30%,
+            transparent 70%, 
+            rgba(0,0,0,0.1) 70%,
+            rgba(0,0,0,0.1) 80%,
+            transparent 80%),
+        -o-linear-gradient(135deg,  
+            transparent 20%,
+            #dedede 20%, 
+            #dedede 30%, 
+            rgba(0,0,0,0.1) 30%,
+            rgba(0,0,0,0.1) 40%,
+            transparent 40%, 
+            transparent 70%, 
+            #dedede 70%, 
+            #dedede 80%, 
+            rgba(0,0,0,0.1) 80%,
+            rgba(0,0,0,0.1) 90%,
+            transparent 90%)
+        ; 
+        background-image: 
+         linear-gradient(-135deg,  
+            transparent 20%, 
+            rgba(0,0,0,0.1) 20%,
+            rgba(0,0,0,0.1) 30%,
+            transparent 30%,
+            transparent 70%, 
+            rgba(0,0,0,0.1) 70%,
+            rgba(0,0,0,0.1) 80%,
+            transparent 80%),
+        linear-gradient(135deg,  
+            transparent 20%,
+            #dedede 20%, 
+            #dedede 30%, 
+            rgba(0,0,0,0.1) 30%,
+            rgba(0,0,0,0.1) 40%,
+            transparent 40%, 
+            transparent 70%, 
+            #dedede 70%, 
+            #dedede 80%, 
+            rgba(0,0,0,0.1) 80%,
+            rgba(0,0,0,0.1) 90%,
+            transparent 90%)
+        ; 
+    background-size: 6px 6px;	
+}
 //END of MIXINs
 
 //NAVIGATION
 body {
-    background-color: #f4f4f4;
+    @include bodyBackground;
     padding-top: 7px
 } 
 
@@ -298,9 +436,14 @@ footer {
 //HOME PAGE
 .homeWrapper{
     @extend header;
+    background-color: #fff;
         .sliderImage{
             height: 330px;
             width: 100%;
+        }
+        .container-fluid {
+            padding-left: 19px;
+            padding-top: 12px;
         }
         .caption {
             font-family: $font-stack;
@@ -337,7 +480,7 @@ footer {
                 a:hover{
                     color: #7b9297;
                 }
-      } 
+        } 
         .slick-next {
             right: 0;
         }
@@ -348,6 +491,39 @@ footer {
         .slick-prev:before, .slick-next:before {
             font-size: 20px;
             opacity: 0.75
+        }
+        .slick-dots {
+            position: relative;
+            margin-top: 9px;
+            margin-bottom: 30px;
+            bottom: 0;
+        }
+        .slick-slider{
+            margin-bottom: 0;
+        }
+        .subNav {
+            height: 50px;
+            @include subNavGradient;
+            border-top: 2px solid #e8e8e8;
+            box-shadow: inset 0px 1px 9px -6px;
+            font-family: $font-stack;
+            font-size: 15px;
+                ul {
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                }
+                li {
+                    display: inline-block;
+                    margin-right: 16px;
+                        a {
+                            color: $primary-color;
+                        }
+                        a:hover {
+                            color: #427c8a;
+                            text-decoration: none;
+                        }
+                }
         }
 }
 

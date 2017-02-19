@@ -1,5 +1,11 @@
 body {
   background-color: #f4f4f4;
+  background-image: -webkit-linear-gradient(-135deg, transparent 20%, rgba(0, 0, 0, 0.1) 20%, rgba(0, 0, 0, 0.1) 30%, transparent 30%, transparent 70%, rgba(0, 0, 0, 0.1) 70%, rgba(0, 0, 0, 0.1) 80%, transparent 80%), -webkit-linear-gradient(135deg, transparent 20%, #dedede 20%, #dedede 30%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.1) 40%, transparent 40%, transparent 70%, #dedede 70%, #dedede 80%, rgba(0, 0, 0, 0.1) 80%, rgba(0, 0, 0, 0.1) 90%, transparent 90%);
+  background-image: -moz-linear-gradient(-135deg, transparent 20%, rgba(0, 0, 0, 0.1) 20%, rgba(0, 0, 0, 0.1) 30%, transparent 30%, transparent 70%, rgba(0, 0, 0, 0.1) 70%, rgba(0, 0, 0, 0.1) 80%, transparent 80%, transparent 100%), -moz-linear-gradient(135deg, transparent 20%, #dedede 20%, #dedede 30%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.1) 40%, transparent 40%, transparent 70%, #dedede 70%, #dedede 80%, rgba(0, 0, 0, 0.1) 80%, rgba(0, 0, 0, 0.1) 90%, transparent 90%, transparent 100%);
+  background-image: -ms-linear-gradient(-135deg, transparent 20%, rgba(0, 0, 0, 0.1) 20%, rgba(0, 0, 0, 0.1) 30%, transparent 30%, transparent 70%, rgba(0, 0, 0, 0.1) 70%, rgba(0, 0, 0, 0.1) 80%, transparent 80%), -ms-linear-gradient(135deg, transparent 20%, #dedede 20%, #dedede 30%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.1) 40%, transparent 40%, transparent 70%, #dedede 70%, #dedede 80%, rgba(0, 0, 0, 0.1) 80%, rgba(0, 0, 0, 0.1) 90%, transparent 90%);
+  background-image: -o-linear-gradient(-135deg, transparent 20%, rgba(0, 0, 0, 0.1) 20%, rgba(0, 0, 0, 0.1) 30%, transparent 30%, transparent 70%, rgba(0, 0, 0, 0.1) 70%, rgba(0, 0, 0, 0.1) 80%, transparent 80%), -o-linear-gradient(135deg, transparent 20%, #dedede 20%, #dedede 30%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.1) 40%, transparent 40%, transparent 70%, #dedede 70%, #dedede 80%, rgba(0, 0, 0, 0.1) 80%, rgba(0, 0, 0, 0.1) 90%, transparent 90%);
+  background-image: linear-gradient(-135deg, transparent 20%, rgba(0, 0, 0, 0.1) 20%, rgba(0, 0, 0, 0.1) 30%, transparent 30%, transparent 70%, rgba(0, 0, 0, 0.1) 70%, rgba(0, 0, 0, 0.1) 80%, transparent 80%), linear-gradient(135deg, transparent 20%, #dedede 20%, #dedede 30%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.1) 40%, transparent 40%, transparent 70%, #dedede 70%, #dedede 80%, rgba(0, 0, 0, 0.1) 80%, rgba(0, 0, 0, 0.1) 90%, transparent 90%);
+  background-size: 6px 6px;
   padding-top: 7px; }
 
 header, footer, .categoriesWrapper, .homeWrapper {
@@ -220,51 +226,85 @@ footer {
       font-style: italic;
       float: right; }
 
-.homeWrapper .sliderImage {
-  height: 330px;
-  width: 100%; }
-
-.homeWrapper .caption {
-  font-family: "Kreon", serif;
-  position: absolute;
-  bottom: 29%;
-  padding: 27px 30px 40px 40px;
-  min-height: 38px;
-  background-color: #565657;
-  opacity: 0.5;
-  margin-left: 13%; }
-  .homeWrapper .caption .captionHeader {
-    font-size: 28px;
-    color: #fff;
-    margin-bottom: 5px; }
-  .homeWrapper .caption .captionBody {
-    font-family: "Droid Sans", sans-serif;
-    font-size: 12px;
-    color: #fff;
-    margin-bottom: 10px; }
-  .homeWrapper .caption .captionButton {
+.homeWrapper {
+  background-color: #fff; }
+  .homeWrapper .sliderImage {
+    height: 330px;
+    width: 100%; }
+  .homeWrapper .container-fluid {
+    padding-left: 19px;
+    padding-top: 12px; }
+  .homeWrapper .caption {
+    font-family: "Kreon", serif;
     position: absolute;
-    right: 0;
-    bottom: 0;
-    padding: 10px;
-    background-color: #100402;
-    opacity: 1; }
-  .homeWrapper .caption a {
-    text-decoration: none;
-    color: #7b9297; }
-  .homeWrapper .caption a:hover {
-    color: #7b9297; }
-
-.homeWrapper .slick-next {
-  right: 0; }
-
-.homeWrapper .slick-prev {
-  left: 0;
-  z-index: 99; }
-
-.homeWrapper .slick-prev:before, .homeWrapper .slick-next:before {
-  font-size: 20px;
-  opacity: 0.75; }
+    bottom: 29%;
+    padding: 27px 30px 40px 40px;
+    min-height: 38px;
+    background-color: #565657;
+    opacity: 0.5;
+    margin-left: 13%; }
+    .homeWrapper .caption .captionHeader {
+      font-size: 28px;
+      color: #fff;
+      margin-bottom: 5px; }
+    .homeWrapper .caption .captionBody {
+      font-family: "Droid Sans", sans-serif;
+      font-size: 12px;
+      color: #fff;
+      margin-bottom: 10px; }
+    .homeWrapper .caption .captionButton {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      padding: 10px;
+      background-color: #100402;
+      opacity: 1; }
+    .homeWrapper .caption a {
+      text-decoration: none;
+      color: #7b9297; }
+    .homeWrapper .caption a:hover {
+      color: #7b9297; }
+  .homeWrapper .slick-next {
+    right: 0; }
+  .homeWrapper .slick-prev {
+    left: 0;
+    z-index: 99; }
+  .homeWrapper .slick-prev:before, .homeWrapper .slick-next:before {
+    font-size: 20px;
+    opacity: 0.75; }
+  .homeWrapper .slick-dots {
+    position: relative;
+    margin-top: 9px;
+    margin-bottom: 30px;
+    bottom: 0; }
+  .homeWrapper .slick-slider {
+    margin-bottom: 0; }
+  .homeWrapper .subNav {
+    height: 50px;
+    background-color: #fff;
+    background-image: -webkit-repeating-linear-gradient(135deg, #f6f6f7, #f6f6f7 1px, transparent 2px, transparent 2px, #f6f6f7 3px);
+    background-image: -moz-repeating-linear-gradient(135deg, #f6f6f7, #f6f6f7 1px, transparent 2px, transparent 2px, #f6f6f7 3px);
+    background-image: -o-repeating-linear-gradient(135deg, #f6f6f7, #f6f6f7 1px, transparent 2px, transparent 2px, #f6f6f7 3px);
+    background-image: repeating-linear-gradient(135deg, #f6f6f7, #f6f6f7 1px, transparent 2px, transparent 2px, #f6f6f7 3px);
+    -webkit-background-size: 4px 4px;
+    -moz-background-size: 4px 4px;
+    background-size: 4px 4px;
+    border-top: 2px solid #e8e8e8;
+    box-shadow: inset 0px 1px 9px -6px;
+    font-family: "Kreon", serif;
+    font-size: 15px; }
+    .homeWrapper .subNav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0; }
+    .homeWrapper .subNav li {
+      display: inline-block;
+      margin-right: 16px; }
+      .homeWrapper .subNav li a {
+        color: #717171; }
+      .homeWrapper .subNav li a:hover {
+        color: #427c8a;
+        text-decoration: none; }
 
 #tb-material-text {
   height: 170px; }
