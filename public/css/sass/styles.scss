@@ -437,6 +437,28 @@ footer {
 .homeWrapper{
     @extend header;
     background-color: #fff;
+    font-family: $font-stack;
+        .sliderTop{
+            .slick-next {
+            right: 0;
+            }
+            .slick-prev {
+                left: 0;
+                z-index: 99
+            }
+            .slick-prev:before, .slick-next:before {
+                font-size: 20px;
+                opacity: 0.75
+            }
+            .slick-dots {
+                position: relative;
+                margin-top: 13px;
+                bottom: 0;
+            }
+            .slick-slider{
+                margin-bottom: 0;
+            }
+        }
         .sliderImage{
             height: 330px;
             width: 100%;
@@ -481,26 +503,7 @@ footer {
                     color: #7b9297;
                 }
         } 
-        .slick-next {
-            right: 0;
-        }
-        .slick-prev {
-            left: 0;
-            z-index: 99
-        }
-        .slick-prev:before, .slick-next:before {
-            font-size: 20px;
-            opacity: 0.75
-        }
-        .slick-dots {
-            position: relative;
-            margin-top: 9px;
-            margin-bottom: 30px;
-            bottom: 0;
-        }
-        .slick-slider{
-            margin-bottom: 0;
-        }
+        
         .subNav {
             height: 50px;
             @include subNavGradient;
@@ -523,6 +526,64 @@ footer {
                             color: #427c8a;
                             text-decoration: none;
                         }
+                }
+        }
+        .bodyWrapper{
+            margin-top: 8px;
+            .container-fluid{
+                padding-left: 36px;
+                padding-right: 36px;
+            }
+            .homeHeadline{
+                border-bottom: 1px solid #f0f0f0;
+                border-top: 1px solid #f0f0f0;
+                text-align: center;
+                padding-top: 16px;
+                padding-bottom: 16px;
+                margin-bottom: 21px;
+                    h2{
+                        color: #1d1d1d;
+                        font-size: 23px;
+                    }
+                    p{
+                        font-size: 15px;
+                        color: $links-color;
+                    }
+            }
+            img {
+                width: 240px;
+                height: 126px;
+            }
+            .row {
+                margin-left: -1px;
+                margin-bottom: 14px;
+                    p {
+                        font-family: $links-stack;
+                        color: $links-color;
+                        font-size: 12px;
+                        margin-top: 14px;
+                        width: 238px;
+                    }
+                    li {
+                        @include unorderedList;
+                    }
+            }
+            h3 {
+                font-size: 20px;
+                color: #1d1d1d;
+            }
+            
+        }
+        .sliderBottom{
+            img {
+                height: 130px;
+                width: 100px;
+            }
+                .slick-next:before{
+                    color: $primary-color;
+                }
+                .slick-prev:before {
+                    color: $primary-color
                 }
         }
 }
