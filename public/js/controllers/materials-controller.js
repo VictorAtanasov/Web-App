@@ -68,6 +68,7 @@ var materialsController = function () {
       templates.get('material-details')
         .then(function (template) {
           context.$element().html(template(detail));
+          comments();
         });
     })
 
@@ -109,7 +110,7 @@ var materialsController = function () {
 
 
     }
-    setTimeout(comments, 3000);
+    //setTimeout(comments, 3000);
   }
 
   return {

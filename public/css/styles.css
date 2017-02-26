@@ -162,6 +162,7 @@ footer {
       color: #d0d0d0;
       margin-bottom: 0; }
   .categoriesWrapper .categoryDescription {
+    display: flex;
     font-family: "Droid Sans", sans-serif;
     font-size: 12px;
     color: #929292; }
@@ -194,7 +195,7 @@ footer {
       color: #1d1d1d;
       font-size: 20px; }
   .categoriesWrapper .comments {
-    margin-top: 32px; }
+    margin-top: 48px; }
   .categoriesWrapper .comment-photo {
     width: 68px;
     height: 68px;
@@ -225,6 +226,30 @@ footer {
       font-size: 12px;
       font-style: italic;
       float: right; }
+    .categoriesWrapper .commentsWrapper .categoryDescription:after {
+      content: "";
+      position: absolute;
+      border: 0;
+      border-right-width: 30px;
+      border-bottom-width: 20px;
+      border-style: solid;
+      border-color: transparent #f0f0f0;
+      display: block;
+      width: 0;
+      margin-top: 23px;
+      right: 60px; }
+  .categoriesWrapper .commentsWrapper:after {
+    content: "";
+    position: absolute;
+    border: 0;
+    border-right-width: 10px;
+    border-bottom-width: 20px;
+    border-style: solid;
+    border-color: transparent #fff;
+    display: block;
+    width: 0;
+    margin-top: 13px;
+    right: 60px; }
 
 .homeWrapper {
   background-color: #fff;
@@ -347,6 +372,9 @@ footer {
     .homeWrapper .bodyWrapper h3 {
       font-size: 20px;
       color: #1d1d1d; }
+  .homeWrapper .sliderBottomWrapper {
+    padding: 5px 8px;
+    border: 1px solid #f0f0f0; }
   .homeWrapper .sliderBottom img {
     height: 130px;
     width: 100px; }

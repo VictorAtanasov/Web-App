@@ -367,6 +367,7 @@ footer {
                 }
         }
         .categoryDescription{
+            display: flex;
             font-family: $links-stack;
             font-size: 12px;
             color: $links-color;
@@ -402,7 +403,7 @@ footer {
                 }
         }
         .comments{
-            margin-top: 32px
+            margin-top: 48px
         }
         .comment-photo{
             width: 68px;
@@ -428,7 +429,33 @@ footer {
                     font-style: italic; 
                     float: right;
                 }
+                .categoryDescription:after{
+                    content: "";
+                    position: absolute;
+                    border: 0;
+                    border-right-width: 30px;
+                    border-bottom-width: 20px;
+                    border-style: solid;
+                    border-color: transparent #f0f0f0;
+                    display: block;
+                    width: 0;
+                    margin-top: 23px;
+                    right: 60px;
+                }
 
+        }
+        .commentsWrapper:after{
+            content: "";
+            position: absolute;
+            border: 0;
+            border-right-width: 10px;
+            border-bottom-width: 20px;
+            border-style: solid;
+            border-color: transparent #fff;
+            display: block;
+            width: 0;
+            margin-top: 13px;
+            right: 60px;
         }
         
 }
@@ -573,6 +600,10 @@ footer {
                 color: #1d1d1d;
             }
             
+        }
+        .sliderBottomWrapper{
+            padding: 5px 8px;
+            border: 1px solid #f0f0f0;
         }
         .sliderBottom{
             img {

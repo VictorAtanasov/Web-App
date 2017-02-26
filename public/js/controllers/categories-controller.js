@@ -30,6 +30,7 @@ var categoriesController = function () {
       templates.get('book')
         .then(function (template) {
           context.$element().html(template(detail));
+          comments();
         });
     })
 
@@ -64,7 +65,7 @@ var categoriesController = function () {
         }
       })
     }
-    setTimeout(comments, 3000);
+    // setTimeout(comments, 3000);
   }
 
 
