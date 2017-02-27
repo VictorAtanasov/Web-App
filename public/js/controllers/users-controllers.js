@@ -13,6 +13,8 @@ var usersController = function () {
                 const btnRegister = document.getElementById('btn-register');
                 const btnLogin = document.getElementById('btn-login');
                 const btnLogout = document.getElementById('btn-logout');
+                const emailRegField = document.getElementById('emailReg');
+                const passRegField = document.getElementById('passwordReg');
 
                 //Add Login event
                 btnLogin.addEventListener('click', e => {
@@ -23,15 +25,16 @@ var usersController = function () {
                     //Sign In
                     const promise = auth.signInWithEmailAndPassword(email, pass);
                     promise
-                        .then(user => toastr.success('You Are Loged In'))
+                        .then(user => toastr.success('You Are Loged In'),
+                                       context.redirect('#/home'))
                         .catch(e => toastr.error(e.message));
                 })
 
                 //Add Signup event
                 btnRegister.addEventListener('click', e => {
                     //Get Email & Pass
-                    const email = emailField.value;
-                    const pass = passField.value;
+                    const email = emailRegField.value;
+                    const pass = passRegField.value;
                     const userName = userNameField.value;
                     const photo = photoUrl.value;
                     const auth = firebase.auth();

@@ -618,8 +618,18 @@ footer {
                 }
         }
 }
-
 //END of HOME PAGE
+
+//Register
+.userWrapper{
+    @extend header;
+    background-color: #fff;
+    padding: 10px;
+        .nav-tabs{
+            margin-bottom: 10px;
+        }
+}
+//End of Register
 
 //END of Book Categories
 

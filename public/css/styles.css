@@ -8,7 +8,7 @@ body {
   background-size: 6px 6px;
   padding-top: 7px; }
 
-header, footer, .categoriesWrapper, .homeWrapper {
+header, footer, .categoriesWrapper, .homeWrapper, .userWrapper {
   margin-left: 7.6%;
   margin-right: 8.2%; }
 
@@ -382,6 +382,12 @@ footer {
     color: #717171; }
   .homeWrapper .sliderBottom .slick-prev:before {
     color: #717171; }
+
+.userWrapper {
+  background-color: #fff;
+  padding: 10px; }
+  .userWrapper .nav-tabs {
+    margin-bottom: 10px; }
 
 #tb-material-text {
   height: 170px; }

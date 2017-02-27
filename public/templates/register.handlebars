@@ -1,20 +1,51 @@
-<h1>Register user</h1>
-<div class="form-group">
-    <label for="tb-email">Email: </label>
-    <input id="tb-email" class="form-control">
+<div class="userWrapper">
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">LogIn</a></li>
+        <li><a data-toggle="tab" href="#menu1">Register</a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="tb-email">Email: </label>
+                        <input id="tb-email" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="tb-password">Password: </label>
+                        <input id="tb-password" type="password" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-default" id="btn-login">Login</button>
+            <button class="btn btn-danger hidden" id="btn-logout">Logout</button>
+        </div>
+        <div id="menu1" class="tab-pane fade">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="tb-email">Email: </label>
+                        <input id="emailReg" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="tb-password">Password: </label>
+                        <input id="passwordReg" type="password" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="tb-userName">User Name: </label>
+                        <input id="tb-userName" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="tb-photoUrl">Photo Url: </label>
+                        <input id="tb-photoUrl" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-default" id="btn-register">Register</button>
+        </div>
+    </div>
 </div>
-<div class="form-group">
-    <label for="tb-password">Password: </label>
-    <input id="tb-password" type="password" class="form-control">
-</div>
-<div class="form-group">
-    <label for="tb-userName">User Name: </label>
-    <input id="tb-userName" class="form-control">
-</div>
-<div class="form-group">
-    <label for="tb-photoUrl">Photo Url: </label>
-    <input id="tb-photoUrl" class="form-control">
-</div>
-<button class="btn btn-default" id="btn-register">Register</button>
-<button class="btn btn-default" id="btn-login">Login</button>
-<button class="btn btn-danger hidden" id="btn-logout">Logout</button>
