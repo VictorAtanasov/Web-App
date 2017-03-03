@@ -228,6 +228,10 @@ header {
     margin-left: 4px;
 }
 
+.nav-icons:hover{
+    color: #437d8b;
+}
+
 .nav-search{
     margin-left: 15px;
     margin-right: -13px;
@@ -251,6 +255,12 @@ header {
     font-size: 13px;
     color: #c2c2c2;
     margin-top: -3px;
+}
+
+.dropdown-menu {
+        a{
+            margin-right: 0;
+        }
 }
 
 .caret{
@@ -532,7 +542,7 @@ footer {
         } 
         
         .subNav {
-            height: 50px;
+            //height: 50px;
             @include subNavGradient;
             border-top: 2px solid #e8e8e8;
             box-shadow: inset 0px 1px 9px -6px;
@@ -542,6 +552,7 @@ footer {
                     list-style-type: none;
                     margin: 0;
                     padding: 0;
+                    margin-bottom: 15px;
                 }
                 li {
                     display: inline-block;
@@ -640,13 +651,71 @@ footer {
 
 //End Of FanFiction
 
+@media (max-width: 991px){
+    .homeWrapper{
+        .caption{
+            margin-left: 10%;
+        }
+    }
+    .homeWrapper{
+        .bodyWrapper {
+            .row{
+                p{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .bottomSlider{
+        display: none;
+    }
+}
+
 @media (max-width: 768px){
     .navbar{
         min-height: 50px;
     }   
     #navbar-brand-custom{
     display: none;
+    }
 }
+@media (max-width: 767px){
+    .nav-icons{
+        display: none;
+    }
+    .nav-search{
+            .input-group{
+                display: none;
+            }
+    }
+    .navbar-custom{
+        margin-top: 0;
+    }
+    .navbar-nav{
+        margin: 0;
+    }
+    .subNav{
+        display: none;
+    }
 }
+
+
+@media (max-width: 700px){
+    .homeWrapper{
+        .caption{
+            margin-left: 0;
+        }
+    }
+}
+
+@media (max-width: 370px){
+    .homeWrapper{
+        .caption{
+            padding: 27px 0 40px 0;
+        }
+    }
+}
+
+
 
 // node-sass styles.scss ../styles.css -w

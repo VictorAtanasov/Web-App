@@ -65,7 +65,6 @@ var categoriesController = function () {
         }
       })
     }
-    // setTimeout(comments, 3000);
   }
 
 
