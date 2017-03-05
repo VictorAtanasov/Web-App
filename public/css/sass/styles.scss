@@ -28,6 +28,16 @@ $links-color: #929292;
                 }
 }
 
+@mixin pageTitle{
+    margin-top: 25px;
+    border-bottom: 1px solid #eaeaea;
+    border-top: 1px solid #eaeaea;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 26px;
+    margin-bottom: 22px;
+}
+
 @mixin gradintComments {
     background: #fafafa; /* Old browsers */
     background: -moz-linear-gradient(top,  #fafafa 0%, #ffffff 21%, #ffffff 83%, #fafafa 100%); /* FF3.6-15 */
@@ -356,13 +366,7 @@ footer {
         }
         .titleWrapper{
             @include gradintTitle;
-            margin-top: 25px;
-            border-bottom: 1px solid #eaeaea;
-            border-top: 1px solid #eaeaea;
-            text-align: center;
-            padding-top: 15px;
-            padding-bottom: 26px;
-            margin-bottom: 22px;
+            @include pageTitle;
         }
         .categorySubtitle{
             border-top: 1px solid #f0f0f0;
@@ -651,6 +655,66 @@ footer {
 
 //End Of FanFiction
 
+//CART
+.cartWrapper{
+    @extend header;
+    background-color: #fff;
+    font-family: $font-stack;
+         a {
+            text-decoration: none;
+            color: $links-color;
+        }
+        h1 {
+            font-size: 27px;
+            margin-bottom: 6px;
+        }
+        h3 {
+            font-size: 20px;
+            color: $links-color;
+            margin-top: 0;
+        }
+        .breadcrumbs{
+            margin-top: 11px;
+            font-size: 14px;
+        }
+        .title{
+            @include gradintTitle;
+            @include pageTitle;
+        }
+        .container-fluid{
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+        .cartTitle{
+            border-top: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 4px;
+            padding-top: 4px;
+            margin-bottom: 10px;
+                p {
+                    font-size: 15px;
+                    color: #d0d0d0;
+                    margin-bottom: 0;
+                }
+        }
+        .bodyWrapepr{
+                .col-md-8{
+                    padding-left: 0;
+                }
+                .img-thumbnail{
+                    width: auto;
+                    height: 100px;
+                }
+        }
+        .cartItem{
+            margin-bottom: 25px;
+        }
+
+}
+// node-sass styles.scss ../styles.css -w
+//END of CART
+
+//MEDIA QUERIES
 @media (max-width: 991px){
     .homeWrapper{
         .caption{

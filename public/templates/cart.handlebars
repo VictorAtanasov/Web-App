@@ -1,0 +1,44 @@
+<div class="cartWrapper">
+    <div class="container-fluid">
+        <p class="breadcrumbs">
+            <a href="#/home">
+                Home
+            </a>
+            <span>&raquo;</span>
+            <span>Shopping Cart</span>      
+        </p>
+        <div class="title">
+            <h1>
+                Shopping Cart
+            </h1>
+        </div>
+        <div class="bodyWrapepr">
+            <div class="col-md-8">   
+                {{#if this}}
+                    {{#each this}}
+                        <div class="cartItem">
+                            <div class="cartTitle">
+                                {{!--<p>{{title}}</p>
+                                <p>{{author}}</p>--}}
+                                <h3>{{title}}</h3>
+                                <p>{{author}}</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="{{imageUrl}}" alt="{{title}}" class="img-thumbnail">
+                                </div>
+                                <div class="col-md-7" id="categoryDescriptionWrapper">
+                                    <p>&#36;{{price}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+                {{else}}
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Oh snap!</strong> Your Cart is Empty
+                    </div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>

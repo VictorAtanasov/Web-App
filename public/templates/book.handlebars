@@ -18,10 +18,10 @@
         </p>
         {{!--Title--}}
         <div class="titleWrapper">
-            <h1>
+            <h1 id="itemName">
                 {{title}}
             </h1>
-            <h3>
+            <h3 id="itemAuthor">
                 {{author}}
             </h3>
         </div>
@@ -30,19 +30,19 @@
             <div class="col-md-8">
                 <div class="category">
                     <div class="categorySubtitle">
-                        <p>Book Price: &#36;{{price}}</p>
+                        <p>Book Price: &#36;<span id="price">{{price}}</span></p>
                         <p>Book Rating: <input type="hidden" class="rating" value="{{rating}}" data-readonly/></p>
                     </div>
                     <div class="row">
                         <div class="col-md-5">
-                            <img src="{{imageUrl}}" alt="{{title}}" class="img-thumbnail">
+                            <img src="{{imageUrl}}" alt="{{title}}" class="img-thumbnail" id="itemImage">
                         </div>
                         <div class="col-md-7" id="categoryDescriptionWrapper">
                             <p class="categoryDescription">{{description}}</p>
                         </div>
                     </div>
                     <div>
-                        <a href="#/home" class="btn btn-default">Buy Now</a>
+                        <button class="btn btn-default" id="cartBtn">Add to Cart</button>
                     </div>
                     {{!--Comments--}}
                     <div class="comments">

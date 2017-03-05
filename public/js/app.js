@@ -6,6 +6,7 @@
         this.get('#/home', homeController.all);
         this.get('#/about', aboutController.all);
         this.get('#/blog', blogController.all);
+        this.get('#/shopping-cart', cartController.cart);
 
         this.get('#/login', usersController.login);
         this.get('#/register', usersController.register);

@@ -31,8 +31,37 @@ var categoriesController = function () {
         .then(function (template) {
           context.$element().html(template(detail));
           comments();
+          cart();
         });
     })
+
+    function cart() {
+      const addToCartBtn = document.getElementById('cartBtn');
+      const itemPrice = document.getElementById('price').innerText;
+      const itemName = document.getElementById('itemName').innerText;
+      const itemAuthor = document.getElementById('itemAuthor').innerText;
+      const itemImage = document.getElementById('itemImage').src;
+      const pageUrl = window.location.href;
+      
+      var cart = carty({
+        storage: carty.storage.localStorage(),
+        currency: 'USD'
+      });
+      
+      addToCartBtn.addEventListener('click', e => {
+        cart.add({
+          id: itemName,
+          label: itemAuthor,
+          price: itemPrice,
+          quantity: 1,
+          author: itemAuthor,
+          title: itemName,
+          imageUrl: itemImage,
+          itemUrl: pageUrl
+        });
+        toastr.success(itemName + ' is added to your cart')
+      })
+    }
 
     function comments() {
       const materialRef = dbRef;

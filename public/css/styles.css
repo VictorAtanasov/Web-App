@@ -8,7 +8,7 @@ body {
   background-size: 6px 6px;
   padding-top: 7px; }
 
-header, footer, .categoriesWrapper, .homeWrapper, .userWrapper {
+header, footer, .categoriesWrapper, .homeWrapper, .userWrapper, .cartWrapper {
   margin-left: 7.6%;
   margin-right: 8.2%; }
 
@@ -397,6 +397,59 @@ footer {
 
 #tb-material-text {
   height: 170px; }
+
+.cartWrapper {
+  background-color: #fff;
+  font-family: "Kreon", serif; }
+  .cartWrapper a {
+    text-decoration: none;
+    color: #929292; }
+  .cartWrapper h1 {
+    font-size: 27px;
+    margin-bottom: 6px; }
+  .cartWrapper h3 {
+    font-size: 20px;
+    color: #929292;
+    margin-top: 0; }
+  .cartWrapper .breadcrumbs {
+    margin-top: 11px;
+    font-size: 14px; }
+  .cartWrapper .title {
+    background: -moz-linear-gradient(top, #fafafa 0%, #ffffff 41%, #ffffff 49%, #ffffff 58%, #fafafa 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #fafafa 0%, #ffffff 41%, #ffffff 49%, #ffffff 58%, #fafafa 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #fafafa 0%, #ffffff 41%, #ffffff 49%, #ffffff 58%, #fafafa 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#fafafa',GradientType=0 );
+    /* IE6-9 */
+    margin-top: 25px;
+    border-bottom: 1px solid #eaeaea;
+    border-top: 1px solid #eaeaea;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 26px;
+    margin-bottom: 22px; }
+  .cartWrapper .container-fluid {
+    padding-left: 5%;
+    padding-right: 5%; }
+  .cartWrapper .cartTitle {
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    margin-bottom: 10px; }
+    .cartWrapper .cartTitle p {
+      font-size: 15px;
+      color: #d0d0d0;
+      margin-bottom: 0; }
+  .cartWrapper .bodyWrapepr .col-md-8 {
+    padding-left: 0; }
+  .cartWrapper .bodyWrapepr .img-thumbnail {
+    width: auto;
+    height: 100px; }
+  .cartWrapper .cartItem {
+    margin-bottom: 25px; }
 
 @media (max-width: 991px) {
   .homeWrapper .caption {
