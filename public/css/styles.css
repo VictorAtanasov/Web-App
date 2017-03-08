@@ -453,6 +453,8 @@ footer {
     height: 100px; }
   .cartWrapper .cartItem {
     margin-bottom: 25px; }
+  .cartWrapper .jumbotron {
+    background-color: #fafafa; }
 
 @media (max-width: 991px) {
   .homeWrapper .caption {

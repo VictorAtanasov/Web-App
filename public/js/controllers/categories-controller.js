@@ -32,8 +32,47 @@ var categoriesController = function () {
           context.$element().html(template(detail));
           comments();
           cart();
+          wishlist();
         });
     })
+
+    function wishlist(){
+      const bookName = document.getElementById('itemName').innerText;
+      const addToWishlistBtn = document.getElementById('wishlistBtn');
+      var user = firebase.auth().currentUser;
+      var userUid = user.uid;
+      var wishlistRef = firebase.database().ref().child('wishlist');
+      var test = 'E9NaBGxomwWpcBYu8aKlv4DTCDd2';
+      var userWishlistRef = wishlistRef.child(userUid);
+
+      addToWishlistBtn.addEventListener('click', e => {
+        userWishlistRef.on('value', function(snap){
+          var data = snap.val();
+        });
+        if (data == null){
+            wishlistRef.child(userUid).set({
+              id: detailId
+            });
+            toastr.success(bookName + 'is added to your wishlist')
+          } else {
+            var wishlistQuery = userWishlistRef.orderByChild("id").equalTo(detailId);
+            wishlistQuery.once('value', function(snapshot){
+              var wishlistQueryResult = snapshot.val();
+              if (wishlistQueryResult == null){
+                var obj = {
+                  id: detailId
+                }
+                userWishlistRef.push(obj);
+                toastr.success(bookName + 'is added to your wishlist')
+              } else {
+                  toastr.warning(bookName + ' is already added in your wishlist!')
+              }
+            })
+            //console.log(wishlistQueryResult)
+            
+          };
+      })
+    }
 
     function cart() {
       const addToCartBtn = document.getElementById('cartBtn');
@@ -42,12 +81,10 @@ var categoriesController = function () {
       const itemAuthor = document.getElementById('itemAuthor').innerText;
       const itemImage = document.getElementById('itemImage').src;
       const pageUrl = window.location.href;
-      
       var cart = carty({
         storage: carty.storage.localStorage(),
         currency: 'USD'
       });
-      
       addToCartBtn.addEventListener('click', e => {
         cart.add({
           id: itemName,
@@ -60,10 +97,8 @@ var categoriesController = function () {
           itemUrl: pageUrl
         });
         toastr.success(itemName + ' is added to your cart')
-      })
-      
-    }
-    
+      }) 
+    };
 
     function comments() {
       const materialRef = dbRef;
