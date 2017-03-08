@@ -13,14 +13,14 @@
             </h1>
         </div>
         <div class="bodyWrapepr">
-            <div class="col-md-8">   
-                {{#if this}}
-                    {{#each this}}
+            {{#if this}}
+                <div class="col-md-8">
+                    {{#each this as |val valId|}}
                         <div class="cartItem">
                             <div class="cartTitle">
                                 {{!--<p>{{title}}</p>
                                 <p>{{author}}</p>--}}
-                                <h3>{{title}}</h3>
+                                <h3> <a href="{{itemUrl}}">{{title}}</a> </h3>
                                 <p>{{author}}</p>
                             </div>
                             <div class="row">
@@ -28,17 +28,30 @@
                                     <img src="{{imageUrl}}" alt="{{title}}" class="img-thumbnail">
                                 </div>
                                 <div class="col-md-7" id="categoryDescriptionWrapper">
-                                    <p>&#36;{{price}}</p>
+                                    <p class="price">Price: &#36;{{price}}</p>
+                                    <p class="quantity">Quantity: {{quantity}}</p>
+                                    <button type="button" class="btn btn-danger remove" id="remove">Remove</button>
+                                    <p style="display: none">{{valId}}</p>
                                 </div>
                             </div>
                         </div>
                     {{/each}}
-                {{else}}
-                    <div class="alert alert-danger" role="alert">
-                        <strong>Oh snap!</strong> Your Cart is Empty
-                    </div>
-                {{/if}}
+                </div>
+            <div class="col-md-4">
+                <div class="cartAside">
+                    
+                </div>
+                <div class="jumbotron">
+                    <h2>Cart Summary</h2>
+                    <p id="totalPrice">Total Ammount: &#36;</p>
+                    <p>Shipping Price: &#36;0</p>
+                </div>
             </div>
+            {{else}}
+                <div class="alert alert-danger" role="alert">
+                    <strong>Oh snap!</strong> Your Cart is Empty
+                </div>
+            {{/if}}
         </div>
     </div>
 </div>

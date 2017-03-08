@@ -404,13 +404,16 @@ footer {
   .cartWrapper a {
     text-decoration: none;
     color: #929292; }
+  .cartWrapper p {
+    font-size: 15px; }
   .cartWrapper h1 {
     font-size: 27px;
     margin-bottom: 6px; }
   .cartWrapper h3 {
     font-size: 20px;
     color: #929292;
-    margin-top: 0; }
+    margin-top: 0;
+    margin-bottom: 0; }
   .cartWrapper .breadcrumbs {
     margin-top: 11px;
     font-size: 14px; }

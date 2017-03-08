@@ -664,6 +664,9 @@ footer {
             text-decoration: none;
             color: $links-color;
         }
+        p{
+            font-size: 15px;
+        }
         h1 {
             font-size: 27px;
             margin-bottom: 6px;
@@ -672,6 +675,7 @@ footer {
             font-size: 20px;
             color: $links-color;
             margin-top: 0;
+            margin-bottom: 0;
         }
         .breadcrumbs{
             margin-top: 11px;

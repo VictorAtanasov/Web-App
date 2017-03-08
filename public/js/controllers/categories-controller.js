@@ -61,7 +61,9 @@ var categoriesController = function () {
         });
         toastr.success(itemName + ' is added to your cart')
       })
+      
     }
+    
 
     function comments() {
       const materialRef = dbRef;
