@@ -6,6 +6,7 @@ var categoriesController = function () {
       templates.get('categories')
         .then(function (template) {
           context.$element().html(template(snap.val()));
+          dbRef.off("value");
         });
     })
   }
@@ -36,44 +37,6 @@ var categoriesController = function () {
         });
     })
 
-    function wishlist(){
-      const bookName = document.getElementById('itemName').innerText;
-      const addToWishlistBtn = document.getElementById('wishlistBtn');
-      var user = firebase.auth().currentUser;
-      var userUid = user.uid;
-      var wishlistRef = firebase.database().ref().child('wishlist');
-      var test = 'E9NaBGxomwWpcBYu8aKlv4DTCDd2';
-      var userWishlistRef = wishlistRef.child(userUid);
-
-      addToWishlistBtn.addEventListener('click', e => {
-        userWishlistRef.on('value', function(snap){
-          var data = snap.val();
-        });
-        if (data == null){
-            wishlistRef.child(userUid).set({
-              id: detailId
-            });
-            toastr.success(bookName + 'is added to your wishlist')
-          } else {
-            var wishlistQuery = userWishlistRef.orderByChild("id").equalTo(detailId);
-            wishlistQuery.once('value', function(snapshot){
-              var wishlistQueryResult = snapshot.val();
-              if (wishlistQueryResult == null){
-                var obj = {
-                  id: detailId
-                }
-                userWishlistRef.push(obj);
-                toastr.success(bookName + 'is added to your wishlist')
-              } else {
-                  toastr.warning(bookName + ' is already added in your wishlist!')
-              }
-            })
-            //console.log(wishlistQueryResult)
-            
-          };
-      })
-    }
-
     function cart() {
       const addToCartBtn = document.getElementById('cartBtn');
       const itemPrice = document.getElementById('price').innerText;
@@ -97,8 +60,8 @@ var categoriesController = function () {
           itemUrl: pageUrl
         });
         toastr.success(itemName + ' is added to your cart')
-      }) 
-    };
+      })
+    }
 
     function comments() {
       const materialRef = dbRef;
@@ -130,6 +93,63 @@ var categoriesController = function () {
           })
         }
       })
+    }
+
+    function wishlist() {
+      const addToWishlistBtn = document.getElementById('wishlistBtn');
+      const bookPrice = document.getElementById('price').innerText;
+      const bookAuthor = document.getElementById('itemAuthor').innerText;
+      const bookImage = document.getElementById('itemImage').src;
+      const bookUrl = window.location.href;
+      const bookName = document.getElementById('itemName').innerText;
+
+      addToWishlistBtn.addEventListener('click', e => {})
+      firebase.auth().onAuthStateChanged(firebaseUser => {
+        if (firebaseUser) {
+          addToWishlistBtn.addEventListener('click', e => {
+            var user = firebase.auth().currentUser;
+            var userUid = user.uid;
+            var wishlistRef = firebase.database().ref().child('wishlist');
+            var userWishlistRef = wishlistRef.child(userUid);
+            userWishlistRef.on('value', function (snap) {
+              var data = snap.val();
+            });
+            if (data == null) {
+              wishlistRef.child(userUid).set({
+                id: detailId,
+                title: bookName,
+                author: bookAuthor,
+                price: bookPrice,
+                image: bookImage,
+                url: bookUrl
+              });
+              toastr.success(bookName + 'is added to your wishlist')
+            } else {
+              var wishlistQuery = userWishlistRef.orderByChild("id").equalTo(detailId);
+              wishlistQuery.once('value', function (snapshot) {
+                var wishlistQueryResult = snapshot.val();
+                if (wishlistQueryResult == null) {
+                  userWishlistRef.push({
+                    id: detailId,
+                    title: bookName,
+                    author: bookAuthor,
+                    price: bookPrice,
+                    image: bookImage,
+                    url: bookUrl
+                  });
+                  toastr.success(bookName + ' is added to your wishlist')
+                } else {
+                  toastr.warning(bookName + ' is already added in your wishlist!')
+                }
+              })
+            };
+          });
+        } else {
+          addToWishlistBtn.addEventListener('click', e => {
+            toastr.warning('LogIn or Register First!')
+          });
+        }
+      });
     }
   }
 

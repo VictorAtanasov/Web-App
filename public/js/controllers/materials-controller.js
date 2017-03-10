@@ -8,6 +8,7 @@ var materialsController = function () {
       templates.get('materials')
         .then(function (template) {
           context.$element().html(template(snap.val()));
+          dbRef.off('value');
         });
     })
   }
@@ -17,7 +18,7 @@ var materialsController = function () {
     templates.get('material-add')
       .then(function (template) {
         context.$element().html(template());
-
+        
         const materialsRef = firebase.database().ref().child('added');
         var user = firebase.auth().currentUser;
         var userName = user.displayName;

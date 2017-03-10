@@ -57,7 +57,8 @@ var usersController = function () {
                 //SignOut
                 btnLogout.addEventListener('click', e => {
                     firebase.auth().signOut();
-                    toastr.warning('You are loged out')
+                    toastr.warning('You are loged out');
+                    context.redirect('#/home')
                 })
 
                 //Add realtime listener

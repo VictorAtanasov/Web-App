@@ -165,7 +165,7 @@ footer {
     margin-bottom: 17px; }
     .categoriesWrapper .categorySubtitle p {
       font-size: 15px;
-      color: #d0d0d0;
+      color: black;
       margin-bottom: 0; }
   .categoriesWrapper .categoryDescription {
     display: flex;
@@ -182,6 +182,8 @@ footer {
       margin-bottom: 17px; }
     .categoriesWrapper .category .btn {
       float: right; }
+    .categoriesWrapper .category #wishlistBtn {
+      margin-right: 5px; }
   .categoriesWrapper aside {
     margin-top: 11px;
     margin-left: 29px; }
@@ -444,8 +446,10 @@ footer {
     margin-bottom: 10px; }
     .cartWrapper .cartTitle p {
       font-size: 15px;
-      color: #d0d0d0;
+      color: black;
       margin-bottom: 0; }
+    .cartWrapper .cartTitle a {
+      color: black; }
   .cartWrapper .bodyWrapepr .col-md-8 {
     padding-left: 0; }
   .cartWrapper .bodyWrapepr .img-thumbnail {
@@ -455,6 +459,25 @@ footer {
     margin-bottom: 25px; }
   .cartWrapper .jumbotron {
     background-color: #fafafa; }
+  .cartWrapper aside {
+    margin-top: 11px;
+    margin-left: 29px; }
+    .cartWrapper aside ul {
+      margin-bottom: 34px; }
+    .cartWrapper aside li {
+      color: #929292;
+      font-family: "Droid Sans", sans-serif;
+      font-size: 12px;
+      margin-bottom: 8px;
+      margin-left: -22px;
+      margin-left: -25px; }
+      .cartWrapper aside li a {
+        text-decoration: none;
+        color: #929292; }
+    .cartWrapper aside h3 {
+      color: #1d1d1d;
+      font-size: 20px;
+      margin-bottom: 10px; }
 
 @media (max-width: 991px) {
   .homeWrapper .caption {

@@ -376,7 +376,7 @@ footer {
             margin-bottom: 17px;
                 p {
                     font-size: 15px;
-                    color: #d0d0d0;
+                    color: black;
                     margin-bottom: 0;
                 }
         }
@@ -399,6 +399,9 @@ footer {
                 }
                 .btn{
                     float: right;
+                }
+                #wishlistBtn{
+                    margin-right: 5px;
                 }
         }
         aside{
@@ -697,8 +700,11 @@ footer {
             margin-bottom: 10px;
                 p {
                     font-size: 15px;
-                    color: #d0d0d0;
+                    color: black;
                     margin-bottom: 0;
+                }
+                a {
+                    color: black;
                 }
         }
         .bodyWrapepr{
@@ -715,6 +721,22 @@ footer {
         }
         .jumbotron{
             background-color: #fafafa;
+        }
+        aside{
+            margin-top: 11px;
+            margin-left: 29px;
+                ul{
+                    margin-bottom: 34px;
+                }
+                li {
+                    @include unorderedList;
+                    margin-left: -25px;
+                }
+                h3{
+                    color: #1d1d1d;
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                }
         }
 
 }
