@@ -1,1 +1,149 @@
-<p>About Works!</p>
+{{!--
+<p>{{title}}</p>
+<p>{{author}}</p>--}}
+<div class="categoriesWrapper">
+    <div class="container-fluid">
+        {{!--Breadcrumb--}}
+        <p class="breadcrumbs">
+            <a href="#/home">
+                Home
+            </a>
+            <span>&raquo;</span>
+            <span>About Us</span>
+        </p>
+        {{!--Title--}}
+        <div class="titleWrapper">
+            <h1>
+                About Us
+            </h1>
+            <h3>
+                The right book in the right hands at the right time can change the world
+            </h3>
+        </div>
+        {{!--Category--}}
+        <div class="row">
+            <div class="col-md-8">
+                <div class="sliderAboutWrapper">
+                    <div class="sliderAbout sliderAutoplay">
+                        <div>
+                            <img src="../css/images/about-2.jpg">
+                        </div>
+                        <div>
+                            <img src="../css/images/about-1.jpg">
+                        </div>
+                        <div>
+                            <img src="../css/images/about-3.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div class="aboutBlock">
+                    <h3>
+                        Who We Are
+                    </h3>
+                    <p>
+                        Chameleon is the world’s largest site for readers and book recommendations. 
+                        Our mission is to help people find and share books they love. Chameleon launched in March 2017.
+                    </p>
+                </div>
+                <div class="aboutBlock">
+                    <h3>
+                        A Few Things You Can Do On Chameleon
+                    </h3>
+                    <p>
+                        Find out if a book is a good fit for you from our community’s reviews.
+                        <br>
+                        Buy the books you like
+                        <br>
+                        Share your Fanfiction stories with our community.
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <aside>
+                    <h3>
+                        Book Categories
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="#/book-categories/Dark-Fantasy">Dark Fantasy Books</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Epic-Fantasy">Epic Fantasy Books</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Romantic-Fantasy">Romantic Fantasy Books</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Sci-fi-Fantasy">Sci-fi Fantasy Books</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Vampire-Fantasy">Vampire Fantasy Books</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Young-Adult-Fantasy">Young Adult Fantasy Books</a>
+                        </li>
+                    </ul>
+                    <h3>
+                        Best Sellers
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="#/book-categories/Dark-Fantasy/The-Blood-Mirror">The Blood Mirror</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Epic-Fantasy/Reign-of-Madness">Reign of Madness</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Romantic-Fantasy/Graceling">Graceling</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Sci-fi-Fantasy/Dune">Dune</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Vampire-Fantasy/Dracula">Dracula</a>
+                        </li>
+                        <li>
+                            <a href="#/book-categories/Young-Adult-Fantasy/Everlost">Everlost</a>
+                        </li>
+                    </ul>
+                    <h3>
+                        Fanfiction Stories
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="#/fan-fiction/-KciT964YxK9YS9NAZ7Z">Enclosed Perimeters</a>
+                        </li>
+                        <li>
+                            <a href="#/fan-fiction/-KciTfHSx1Jg3ftBX1XL">Delusions</a>
+                        </li>
+                        <li>
+                            <a href="#/fan-fiction/-KciU1Bw6Ia4a5E1Ln5n">You Have Been Hacked</a>
+                        </li>
+                        <li>
+                            <a href="#/fan-fiction/-Ke5Re8kpMnIi58_MZ1X">A Knight to Remember</a>
+                        </li>
+                        <li>
+                            <a href="#/fan-fiction/-Ke5SNbglosXE_Sg8ASu">Stray</a>
+                        </li>
+                        <li>
+                            <a href="#/fan-fiction/-Ke5T58PAgntE-aF_XkQ">Little Luna</a>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('.sliderAutoplay').slick({
+        dots: false,
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear'
+    });
+</script>

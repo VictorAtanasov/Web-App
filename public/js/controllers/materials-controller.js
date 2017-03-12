@@ -13,7 +13,6 @@ var materialsController = function () {
     })
   }
 
-
   function add(context) {
     templates.get('material-add')
       .then(function (template) {
@@ -30,6 +29,23 @@ var materialsController = function () {
         const desField = document.getElementById('tb-material-des');
         const buttonAdd = document.getElementById('btn-add');
         const alertMsg = document.getElementById('alertMsg');
+        const uploader = document.getElementById('uploader');
+        const fileButon = document.getElementById('fileButton');
+        const fileName = document.getElementById('fileName');
+        const storageRef = firebase.storage().ref().child('FanfictionImages');
+
+        fileButon.addEventListener('change', function(e){
+          var file = e.target.files[0];
+          var storageRef = firebase.storage().ref('FanfictionImages/' + file.name);
+          var task = storageRef.put(file);
+          fileName.innerHTML = file.name;
+          task.on('state_changed',
+            function progress(snapshot){
+              var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+              uploader.value = percentage;
+            }
+          );
+        });
 
         //Add realtime listener
         firebase.auth().onAuthStateChanged(firebaseUser => {
@@ -39,23 +55,26 @@ var materialsController = function () {
           }
         })
 
-        buttonAdd.addEventListener('click', e => {
+        buttonAdd.addEventListener('click', function() {
           //Values
           let titleValue = titleField.value;
           let textValue = textField.value;
           let desValue = desField.value;
-          let linkValue = linkField.value;
+          let imgName = fileName.innerHTML;
+          let imgRef = storageRef.child(imgName);
           let date = (new Date()).toString().split(' ').splice(1, 3).join(' ');
-          materialsRef.push({
-            title: titleValue,
-            text: textValue,
-            description: desValue,
-            imgUrl: linkValue,
-            author: userName,
-            date: date
-          })
-          toastr.success('Added!');
-          context.redirect('#/fan-fiction');
+          imgRef.getDownloadURL().then(function(url) {
+            materialsRef.push({
+              title: titleValue,
+              text: textValue,
+              description: desValue,
+              imgUrl: url,
+              author: userName,
+              date: date
+            })
+            toastr.success('Added!');
+            context.redirect('#/fan-fiction');
+          });
         });
       });
   }
@@ -65,10 +84,10 @@ var materialsController = function () {
     const dbRef = firebase.database().ref();
     dbRef.on('value', function (snap) {
       var detail = snap.val().added[detailId];
-      //console.log(detail)
       templates.get('material-details')
         .then(function (template) {
           context.$element().html(template(detail));
+          dbRef.off('value');
           comments();
         });
     })
@@ -81,9 +100,6 @@ var materialsController = function () {
       //Fields Selection
       const commentField = document.getElementById('tb-comment');
       const btnAddComment = document.getElementById('btn-add-comment');
-
-
-
 
       firebase.auth().onAuthStateChanged(firebaseUser => {
         if (firebaseUser) {
@@ -99,6 +115,15 @@ var materialsController = function () {
               photoUrl: photo,
               author: userName,
               date: date
+            });
+            dbRef.on('value', function (snap) {
+              var detail = snap.val().added[detailId];
+              templates.get('material-details')
+              .then(function (template) {
+                context.$element().html(template(detail));
+                dbRef.off('value');
+                comments();
+              });
             })
             toastr.success('Your Comment is Added!');
           });
@@ -106,12 +131,9 @@ var materialsController = function () {
           btnAddComment.addEventListener('click', e => {
             toastr.warning('Register or LogIn to add a comment');
           });
-        }
-      })
-
-
-    }
-    //setTimeout(comments, 3000);
+        };
+      });
+    };
   }
 
   return {

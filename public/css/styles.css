@@ -258,6 +258,16 @@ footer {
     width: 0;
     margin-top: 13px;
     right: 60px; }
+  .categoriesWrapper .slick-prev .slick-arrow {
+    display: none !important; }
+  .categoriesWrapper .slick-arrow::before {
+    display: none; }
+  .categoriesWrapper .aboutBlock {
+    margin-top: 20px; }
+    .categoriesWrapper .aboutBlock h3 {
+      color: black; }
+  .categoriesWrapper #uploader {
+    width: 100%; }
 
 .homeWrapper {
   background-color: #fff;
@@ -400,6 +410,10 @@ footer {
 #tb-material-text {
   height: 170px; }
 
+.fanfictionBtnWrapper {
+  margin-bottom: 20px;
+  margin-top: 10px; }
+
 .cartWrapper {
   background-color: #fff;
   font-family: "Kreon", serif; }
@@ -485,7 +499,13 @@ footer {
   .homeWrapper .bodyWrapper .row p {
     width: 100%; }
   .bottomSlider {
-    display: none; } }
+    display: none; }
+  .categoriesWrapper aside {
+    margin-left: 0;
+    margin-top: 25px; }
+  .categoriesWrapper #categoryDescriptionWrapper {
+    margin-top: 10px;
+    padding-left: 15px; } }
 
 @media (max-width: 768px) {
   .navbar {
@@ -508,6 +528,10 @@ footer {
 @media (max-width: 700px) {
   .homeWrapper .caption {
     margin-left: 0; } }
+
+@media (max-width: 600px) {
+  .categoriesWrapper .sliderAboutWrapper {
+    display: none; } }
 
 @media (max-width: 370px) {
   .homeWrapper .caption {

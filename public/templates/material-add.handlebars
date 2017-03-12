@@ -34,10 +34,10 @@
         {{!--Title--}}
         <div class="titleWrapper">
             <h1>
-                Add New Fan Fiction Story
+                Add New Fanfiction Story
             </h1>
             <h3>
-                Add Your Story
+                Share your Fanfiction story with the world!
             </h3>
         </div>
         <div class="row">
@@ -71,17 +71,20 @@
             </div>
             <div class="col-md-6">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Image Link</div>
+                    <div class="panel-heading">Upload Story Image</div>
                     <div class="panel-body">
-                        <input id="tb-material-link" class="form-control">
+                        {{!--<input id="tb-material-link" class="form-control">--}}
+                        <progress value="0" max="100" id="uploader"></progress>
+                        <input type="file" value="upload" id="fileButton">
+                        <span id="fileName" style="display: none"></span>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 pull-right">
-                <button class="btn btn-warning hidden" id="btn-add">Add Material</button>
-                <div class="alert alert-danger" role="alert" id="alertMsg">Log In or Register to Add Fan Fiction</div>
+            <div class="col-md-6 pull-right fanfictionBtnWrapper">
+                <button class="btn btn-success pull-right hidden" id="btn-add">Add Your Story</button>
+                <div class="alert alert-danger" role="alert" id="alertMsg">LogIn or Register to Add Fanfiction</div>
             </div>
         </div>
     </div>
