@@ -5,7 +5,7 @@
         });
         this.get('#/home', homeController.all);
         this.get('#/about', aboutController.all);
-        this.get('#/blog', blogController.all);
+        this.get('#/search', searchController.all);
         this.get('#/shopping-cart', cartController.cart);
         this.get('#/wishlist', wishlistController.wishlist);
 

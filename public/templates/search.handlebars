@@ -6,54 +6,45 @@
                 Home
             </a>
             <span>&raquo;</span>
-            <span>About Us</span>
+            <span>Search</span>
         </p>
         {{!--Title--}}
         <div class="titleWrapper">
             <h1>
-                About Us
+                Your Search Results
             </h1>
-            <h3>
-                The right book in the right hands at the right time can change the world
-            </h3>
         </div>
         {{!--Category--}}
         <div class="row">
             <div class="col-md-8">
-                <div class="sliderAboutWrapper">
-                    <div class="sliderAbout sliderAutoplay">
-                        <div>
-                            <img src="../css/images/about-2.jpg">
+                {{#if this}}
+                {{#each this as |val valId|}}
+                
+                <div class="category">
+                    <h4>
+                        <a href="#/book-categories/{{val.bookCategory}}/{{valId}}">{{val.title}}</a>
+                    </h4>
+                    <div class="categorySubtitle">
+                        <p>{{author}}</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <img src="{{val.imageUrl}}" alt="{{val.title}}" class="img-thumbnail">
                         </div>
-                        <div>
-                            <img src="../css/images/about-1.jpg">
-                        </div>
-                        <div>
-                            <img src="../css/images/about-3.jpg">
+                        <div class="col-md-7" id="categoryDescriptionWrapper">
+                            <p class="categoryDescription">{{val.description}}</p>
                         </div>
                     </div>
+                    <div>
+                        <a href="#/book-categories/{{val.bookCategory}}/{{valId}}" class="btn btn-default">View Book</a>
+                    </div>
                 </div>
-                <div class="aboutBlock">
-                    <h3>
-                        Who We Are
-                    </h3>
-                    <p>
-                        Chameleon is the world’s largest site for readers and book recommendations. 
-                        Our mission is to help people find and share books they love. Chameleon launched in March 2017.
-                    </p>
+                {{/each}}
+                {{else}}
+                <div class="alert alert-danger" role="alert">
+                    <strong>Oh snap!</strong> We can't find what you're looking for. 
                 </div>
-                <div class="aboutBlock">
-                    <h3>
-                        A Few Things You Can Do On Chameleon
-                    </h3>
-                    <p>
-                        Find out if a book is a good fit for you from our community’s reviews.
-                        <br>
-                        Buy the books you like
-                        <br>
-                        Share your Fanfiction stories with our community.
-                    </p>
-                </div>
+                {{/if}}
             </div>
             <div class="col-sm-4">
                 <aside>
@@ -131,16 +122,3 @@
         </div>
     </div>
 </div>
-<script>
-    $('.sliderAutoplay').slick({
-        dots: false,
-        slidesToScroll: 1,
-        slidesToShow: 1,
-        infinite: true,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        speed: 500,
-        fade: true,
-        cssEase: 'linear'
-    });
-</script>

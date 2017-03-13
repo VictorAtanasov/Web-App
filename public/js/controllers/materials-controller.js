@@ -9,15 +9,25 @@ var materialsController = function () {
         .then(function (template) {
           context.$element().html(template(snap.val()));
           dbRef.off('value');
+          search();
         });
     })
+
+    function search() {
+      var inputField = $('#search');
+      inputField.keypress(function (event) {
+        if (event.which == 13) {
+          context.redirect('#/search')
+        }
+      });
+    }
   }
 
   function add(context) {
     templates.get('material-add')
       .then(function (template) {
         context.$element().html(template());
-        
+
         const materialsRef = firebase.database().ref().child('added');
         var user = firebase.auth().currentUser;
         var userName = user.displayName;
@@ -34,13 +44,13 @@ var materialsController = function () {
         const fileName = document.getElementById('fileName');
         const storageRef = firebase.storage().ref().child('FanfictionImages');
 
-        fileButon.addEventListener('change', function(e){
+        fileButon.addEventListener('change', function (e) {
           var file = e.target.files[0];
           var storageRef = firebase.storage().ref('FanfictionImages/' + file.name);
           var task = storageRef.put(file);
           fileName.innerHTML = file.name;
           task.on('state_changed',
-            function progress(snapshot){
+            function progress(snapshot) {
               var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
               uploader.value = percentage;
             }
@@ -55,7 +65,7 @@ var materialsController = function () {
           }
         })
 
-        buttonAdd.addEventListener('click', function() {
+        buttonAdd.addEventListener('click', function () {
           //Values
           let titleValue = titleField.value;
           let textValue = textField.value;
@@ -63,7 +73,7 @@ var materialsController = function () {
           let imgName = fileName.innerHTML;
           let imgRef = storageRef.child(imgName);
           let date = (new Date()).toString().split(' ').splice(1, 3).join(' ');
-          imgRef.getDownloadURL().then(function(url) {
+          imgRef.getDownloadURL().then(function (url) {
             materialsRef.push({
               title: titleValue,
               text: textValue,
@@ -89,6 +99,7 @@ var materialsController = function () {
           context.$element().html(template(detail));
           dbRef.off('value');
           comments();
+          search();
         });
     })
 
@@ -119,11 +130,11 @@ var materialsController = function () {
             dbRef.on('value', function (snap) {
               var detail = snap.val().added[detailId];
               templates.get('material-details')
-              .then(function (template) {
-                context.$element().html(template(detail));
-                dbRef.off('value');
-                comments();
-              });
+                .then(function (template) {
+                  context.$element().html(template(detail));
+                  dbRef.off('value');
+                  comments();
+                });
             })
             toastr.success('Your Comment is Added!');
           });
@@ -134,6 +145,15 @@ var materialsController = function () {
         };
       });
     };
+
+    function search() {
+      var inputField = $('#search');
+      inputField.keypress(function (event) {
+        if (event.which == 13) {
+          context.redirect('#/search')
+        }
+      });
+    }
   }
 
   return {

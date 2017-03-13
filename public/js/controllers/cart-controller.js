@@ -16,6 +16,7 @@ var cartController = function () {
         context.$element().html(template(storage));
         total();
         remove();
+        search();
       });
 
     function total(){
@@ -53,6 +54,15 @@ var cartController = function () {
         localStorage.carty = newStorage;
         location.reload();
       })
+    }
+
+    function search() {
+      var inputField = $('#search');
+      inputField.keypress(function (event) {
+        if (event.which == 13) {
+          context.redirect('#/search')
+        }
+      });
     }
   }
 

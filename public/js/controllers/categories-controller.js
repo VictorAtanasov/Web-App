@@ -7,8 +7,17 @@ var categoriesController = function () {
         .then(function (template) {
           context.$element().html(template(snap.val()));
           dbRef.off("value");
+          search();
         });
     })
+    function search() {
+      var inputField = $('#search');
+      inputField.keypress(function (event) {
+        if (event.which == 13) {
+          context.redirect('#/search')
+        }
+      });
+    }
   }
 
   function one(context) {
@@ -19,8 +28,18 @@ var categoriesController = function () {
       templates.get('category')
         .then(function (template) {
           context.$element().html(template(snapshot.val()));
+          dbRef.off();
+          search();
         });
     });
+    function search() {
+      var inputField = $('#search');
+      inputField.keypress(function (event) {
+        if (event.which == 13) {
+          context.redirect('#/search')
+        }
+      });
+    }
   }
 
   function book(context) {
@@ -34,6 +53,7 @@ var categoriesController = function () {
           comments();
           cart();
           wishlist();
+          search();
         });
     })
 
@@ -148,6 +168,15 @@ var categoriesController = function () {
           addToWishlistBtn.addEventListener('click', e => {
             toastr.warning('LogIn or Register First!')
           });
+        }
+      });
+    }
+
+    function search() {
+      var inputField = $('#search');
+      inputField.keypress(function (event) {
+        if (event.which == 13) {
+          context.redirect('#/search')
         }
       });
     }

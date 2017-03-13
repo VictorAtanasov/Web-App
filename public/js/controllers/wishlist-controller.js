@@ -12,15 +12,26 @@ var wishlistController = function () {
                             context.$element().html(template(snap.val()));
                             wishlistRef.off('value');
                             remove(userUid);
+                            search();
                         });
                 });
             } else {
                 templates.get('wishlist')
                     .then(function (template) {
                         context.$element().html(template());
+                        search();
                     });
             }
         })
+
+        function search() {
+            var inputField = $('#search');
+            inputField.keypress(function (event) {
+                if (event.which == 13) {
+                    context.redirect('#/search')
+                }
+            });
+        }
 
         function remove(userUid) {
             var wishlistRef = firebase.database().ref().child('wishlist').child(userUid);
