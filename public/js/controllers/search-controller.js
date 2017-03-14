@@ -3,6 +3,9 @@ var searchController = function () {
   function all(context) {
     var inputField = document.getElementById('search');
     var inputFieldTxt = inputField.value;
+    if (inputFieldTxt === ''){
+      inputFieldTxt = 'pepe'
+    };
     function toTitleCase(str) {
       return str.replace(/\w\S*/g, function (txt) {
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
@@ -25,7 +28,7 @@ var searchController = function () {
       var inputField = $('#search');
       inputField.keypress(function (event) {
         if (event.which == 13) {
-          context.redirect('#/search')
+          context.redirect('#/search');
         }
       });
     }
