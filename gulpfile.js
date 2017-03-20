@@ -39,7 +39,7 @@ gulp.task('compile:sass', () => {
         .pipe(gulp.dest('public/css'));
 })
 
-gulp.task('sass:watch', function (){
+gulp.task('sass', function (){
     gulp.watch('dev/css/sass/styles.scss', ['compile:sass']);
 })
 

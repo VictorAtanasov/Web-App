@@ -25,7 +25,7 @@ var usersController = function () {
                     //Sign In
                     const promise = auth.signInWithEmailAndPassword(email, pass);
                     promise
-                        .then(user => toastr.success('You Are Loged In'),
+                        .then(user => toastr.success('Hello Again! You Are Loged In'),
                                        context.redirect('#/home'))
                         .catch(e => toastr.error(e.message));
                 })
@@ -41,7 +41,8 @@ var usersController = function () {
                     //Register
                     const promise = auth.createUserWithEmailAndPassword(email, pass);
                     promise
-                        .then(user => toastr.success('You Are Registered'))
+                        .then(user => toastr.success('Hello ' + userName + '! You Are Registered & Loged In'),
+                                      context.redirect('#/home'))
                         .catch(e => toastr.error(e.message));
                     firebase.auth().onAuthStateChanged(firebaseUser => {
                         if (firebaseUser) {
