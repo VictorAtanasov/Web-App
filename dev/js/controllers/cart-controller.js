@@ -60,7 +60,8 @@ var cartController = function () {
       var inputField = $('#search');
       inputField.keypress(function (event) {
         if (event.which == 13) {
-          context.redirect('#/search')
+          context.redirect('#/search');
+          $(".navbar-collapse").collapse('hide');
         }
       });
     }

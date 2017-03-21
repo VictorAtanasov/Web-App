@@ -1,1 +1,1 @@
-"use strict";var aboutController=function(){function t(t){function e(){$("#search").keypress(function(e){13==e.which&&t.redirect("#/search")})}templates.get("about").then(function(n){t.$element().html(n()),e()})}return{all:t}}();
+"use strict";var aboutController=function(){function e(e){function t(){$("#search").keypress(function(t){13==t.which&&(e.redirect("#/search"),$(".navbar-collapse").collapse("hide"))})}templates.get("about").then(function(n){e.$element().html(n()),t()})}return{all:e}}();

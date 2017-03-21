@@ -53,9 +53,22 @@
     .nav-icons{
         display: none;
     }
+    // .nav-search{
+    //         .input-group{
+    //             display: none;
+    //         }
+    // }
     .nav-search{
+        margin-top: 8px;
+        margin-left: 0;
             .input-group{
-                display: none;
+                width: 100%;
+                padding-right: 7px;
+            }
+            .input-group-sm {
+                .form-control{
+                    height: 32px;
+                }
             }
     }
     .navbar-custom{

@@ -1,1 +1,1 @@
-"use strict";var homeController=function(){function e(e){function t(){$("#search").keypress(function(t){13==t.which&&e.redirect("#/search")})}templates.get("home").then(function(n){e.$element().html(n()),t()})}return{all:e}}();
+"use strict";var homeController=function(){function e(e){function t(){$("#search").keypress(function(t){13==t.which&&(e.redirect("#/search"),$(".navbar-collapse").collapse("hide"))})}templates.get("home").then(function(n){e.$element().html(n()),t()})}return{all:e}}();

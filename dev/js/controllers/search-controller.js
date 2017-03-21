@@ -29,6 +29,7 @@ var searchController = function () {
       inputField.keypress(function (event) {
         if (event.which == 13) {
           context.redirect('#/search');
+          $(".navbar-collapse").collapse('hide');
         }
       });
     }
