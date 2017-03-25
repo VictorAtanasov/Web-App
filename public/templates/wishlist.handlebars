@@ -18,19 +18,18 @@
                     {{#each this as |val valId|}}
                         <div class="cartItem">
                             <div class="cartTitle">
-                                {{!--<p>{{title}}</p>
-                                <p>{{author}}</p>--}}
-                                <h3> <a href="{{url}}">{{title}}</a> </h3>
-                                <p>{{author}}</p>
+                                <h3 id="itemurl"> <a href="{{url}}" id="title">{{title}}</a> </h3>
+                                <p id="author">{{author}}</p>
                             </div>
                             <div class="row">
                                 <div class="col-md-3 cartImage">
-                                    <img src="{{image}}" alt="{{title}}" class="img-thumbnail">
+                                    <img src="{{image}}" alt="{{title}}" class="img-thumbnail" id="image">
                                 </div>
                                 <div class="col-md-7" id="categoryDescriptionWrapper">
-                                    <p class="price">Price: &#36;{{price}}</p>
-                                    <button type="button" class="btn btn-danger remove" id="remove">Remove</button>
+                                    <p class="price" id="price">Price: &#36;{{price}}</p>
+                                    <button type="button" class="btn btn-default remove" id="remove">Remove</button>
                                     <p style="display: none">{{valId}}</p>
+                                    <button type="button" class="btn btn-primary add-to-cart">Add To Cart</button>
                                 </div>
                             </div>
                         </div>

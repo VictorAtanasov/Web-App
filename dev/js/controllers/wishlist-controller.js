@@ -13,6 +13,7 @@ var wishlistController = function () {
                             wishlistRef.off('value');
                             remove(userUid);
                             search();
+                            cart(userUid);
                         });
                 });
             } else {
@@ -44,6 +45,34 @@ var wishlistController = function () {
                 wishlistRef.off();
                 location.reload();
             });
+        }
+
+        function cart(userUid) {
+            var cartBtn = $('.add-to-cart');
+            var cart = carty({
+                storage: carty.storage.localStorage(),
+                currency: 'USD'
+            });
+            cartBtn.on('click', function () {
+                var $this = $(this);
+                var parent = $this.parents('.cartItem');
+                var itemPrice = parent.find('#price').html();
+                var itemName = parent.find('#title').html();
+                var itemAuthor = parent.find('#author').html();
+                var image = parent.find('#image').attr('src');
+                var url = parent.find('#title').attr('href');
+                cart.add({
+                    id: itemName,
+                    label: itemAuthor,
+                    price: itemPrice,
+                    quantity: 1,
+                    author: itemAuthor,
+                    title: itemName,
+                    imageUrl: image,
+                    itemUrl: url
+                });
+                toastr.success(itemName + ' is added to your cart');
+            })
         }
     }
 
