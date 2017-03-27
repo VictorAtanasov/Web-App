@@ -1,3 +1,14 @@
+# Chameleon - Book Store
+Chameleon - Book Store is a Ecommerce Single Page Application powered by Firebase
+- Used Libraries
+  - Bootstrap
+  - Jquery
+  - SammyJS
+  - Handlebars
+  - Toastr
+  - Slick Carousel
+  - Carty
+
 # Requirements for the "Web front-end develeopment" course project
 
 This document describes the final project assignment for Telerik Academy students in "Web front-end develeopment" course
