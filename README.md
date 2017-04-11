@@ -8,6 +8,7 @@ Chameleon - Book Store is a Ecommerce Single Page Application powered by Firebas
   - Toastr
   - Slick Carousel
   - Carty
+- Live Version URL - https://web-app-66bd5.firebaseapp.com/#/home
 
 # Requirements for the "Web front-end develeopment" course project
 
